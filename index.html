@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIP Wealth Builder • Bangladesh Mutual Fund Intelligence Hub (Oct 2026)</title>
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
@@ -38,7 +39,9 @@
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
 
   <style>
     /* Custom Scrollbar for FinTech Tables */
@@ -46,13 +49,16 @@
       width: 6px;
       height: 6px;
     }
+
     ::-webkit-scrollbar-track {
       background: rgba(15, 23, 42, 0.4);
     }
+
     ::-webkit-scrollbar-thumb {
       background: #475569;
       border-radius: 3px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #64748b;
     }
@@ -63,59 +69,89 @@
     }
 
     @keyframes pulse-slow {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
     }
+
     .animate-pulse-slow {
       animation: pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
   </style>
+  <!-- Custom GitHub Pages Assets -->
+  <link rel="stylesheet" href="https://touhidul4052.github.io/BDSIP/style" />
+  <script src="https://touhidul4052.github.io/BDSIP/script.js" defer></script>
 </head>
 
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-black transition-colors duration-200">
+<body
+  class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-black transition-colors duration-200">
 
   <!-- ========================================================================= -->
   <!-- 1. TOP INSTITUTIONAL NAVIGATION BAR & COMPLIANCE BADGE                    -->
   <!-- ========================================================================= -->
-  <nav class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+  <nav
+    class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        
+
         <!-- Brand Identity -->
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20">
             ৳
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white">SIP Wealth Builder</span>
-              <span class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse-slow"></span> BSEC Verified Oct 2026
+              <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white">SIP Wealth
+                Builder</span>
+              <span
+                class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse-slow"></span>
+                BSEC Verified Oct 2026
               </span>
             </div>
-            <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">Bangladesh Mutual Fund SIP Intelligence Hub</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">Bangladesh Mutual Fund SIP
+              Intelligence Hub</p>
           </div>
         </div>
 
         <!-- Quick Anchor Links -->
         <div class="hidden md:flex items-center gap-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
-          <a href="#section-engine" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Filter &amp; Match</a>
-          <a href="#section-top-picks" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Top Picks</a>
-          <a href="#section-screener" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Master Screener (26 Funds)</a>
-          <a href="#section-calculator" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Wealth Calculator</a>
-          <a href="#section-safety" class="px-3 py-1.5 rounded-lg text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition">Flagged AMCs ❌</a>
+          <a href="#section-engine"
+            class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Filter
+            &amp; Match</a>
+          <a href="#section-top-picks"
+            class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Top
+            Picks</a>
+          <a href="#section-screener"
+            class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Master
+            Screener (26 Funds)</a>
+          <a href="#section-calculator"
+            class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Wealth
+            Calculator</a>
+          <a href="#section-safety"
+            class="px-3 py-1.5 rounded-lg text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition">Flagged
+            AMCs ❌</a>
         </div>
 
         <!-- Actions: Theme Toggle & Jump CTA -->
         <div class="flex items-center gap-2 sm:gap-3">
           <!-- Theme Toggle Button -->
-          <button id="themeToggleBtn" type="button" aria-label="Toggle Theme" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/60 transition">
+          <button id="themeToggleBtn" type="button" aria-label="Toggle Theme"
+            class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/60 transition">
             <span id="themeIconDark" class="hidden text-base">🌙</span>
             <span id="themeIconLight" class="text-base">☀️</span>
           </button>
 
           <!-- Quick Action Button -->
-          <a href="#section-engine" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 shadow-md shadow-emerald-500/20 transition transform active:scale-95">
+          <a href="#section-engine"
+            class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 shadow-md shadow-emerald-500/20 transition transform active:scale-95">
             Find My SIP &rarr;
           </a>
         </div>
@@ -127,70 +163,92 @@
   <!-- ========================================================================= -->
   <!-- 2. HERO SECTION: THE HOOK & EXECUTIVE STATS BAR                           -->
   <!-- ========================================================================= -->
-  <header class="relative overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:from-slate-900 dark:via-slate-900/80 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800/60 pt-10 pb-12 sm:pt-14 sm:pb-16 transition-colors">
+  <header
+    class="relative overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:from-slate-900 dark:via-slate-900/80 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800/60 pt-10 pb-12 sm:pt-14 sm:pb-16 transition-colors">
     <!-- Ambient background glow -->
-    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div
+      class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none">
+    </div>
     <div class="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-      
+
       <!-- Regulatory Pill Badges -->
       <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-4">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span> BSEC Rules 2025 Enforced
+        <span
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span> BSEC Rules 2025
+          Enforced
         </span>
-        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 dark:bg-blue-500/15 border border-blue-500/30 text-blue-800 dark:text-blue-300">
+        <span
+          class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 dark:bg-blue-500/15 border border-blue-500/30 text-blue-800 dark:text-blue-300">
           Finance Act 2026 Tax Credit
         </span>
-        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 dark:bg-purple-500/15 border border-purple-500/30 text-purple-800 dark:text-purple-300">
+        <span
+          class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 dark:bg-purple-500/15 border border-purple-500/30 text-purple-800 dark:text-purple-300">
           102 Open-End Funds Analyzed
         </span>
       </div>
 
       <!-- Main Headline -->
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight max-w-4xl">
-        Build Long-Term Wealth with <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400">Bangladesh’s Top Rated SIPs</span> (Oct 2026)
+      <h1
+        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight max-w-4xl">
+        Build Long-Term Wealth with <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400">Bangladesh’s
+          Top Rated SIPs</span> (Oct 2026)
       </h1>
 
       <!-- Sub-headline -->
       <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-        Verified BSEC Data &bull; Tax-Free Returns up to ৳75 Lakh &bull; Zero Hallucinations. Replace guesswork with evidence-based institutional intelligence across 43 Asset Management Companies.
+        Verified BSEC Data &bull; Tax-Free Returns up to ৳75 Lakh &bull; Zero Hallucinations. Replace guesswork with
+        evidence-based institutional intelligence across 43 Asset Management Companies.
       </p>
 
       <!-- KEY STATS BAR -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
-        
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+
         <!-- Stat 1 -->
-        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
-          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Industry AUM</div>
+        <div
+          class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total
+            Industry AUM</div>
           <div class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-0.5">৳5,768 Cr</div>
           <div class="text-[11px] text-emerald-600 dark:text-emerald-400 mt-0.5">102 Funds across 43 AMCs</div>
         </div>
 
         <!-- Stat 2 -->
-        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
-          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Avg Inflation Hurdle</div>
+        <div
+          class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Avg Inflation
+            Hurdle</div>
           <div class="text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-300 mt-0.5">8.34% CPI</div>
           <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Policy Repo: 10.00%</div>
         </div>
 
         <!-- Stat 3 -->
-        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
-          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Top 3Y SIP Return</div>
+        <div
+          class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Top 3Y SIP
+            Return</div>
           <div class="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-0.5">+16.19% p.a.</div>
           <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">EDGE Growth Fund (#1)</div>
         </div>
 
         <!-- Stat 4 -->
-        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
-          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Max Tax Credit</div>
+        <div
+          class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Max Tax
+            Credit</div>
           <div class="text-xl sm:text-2xl font-black text-teal-600 dark:text-teal-300 mt-0.5">৳7,50,000 / yr</div>
           <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">10% Rebate up to ৳75L</div>
         </div>
 
         <!-- Stat 5 -->
-        <div class="col-span-2 sm:col-span-1 bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
-          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">SIP vs Lump-Sum</div>
+        <div
+          class="col-span-2 sm:col-span-1 bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">SIP vs
+            Lump-Sum</div>
           <div class="text-xl sm:text-2xl font-black text-cyan-600 dark:text-cyan-300 mt-0.5">+200 to +455 bps</div>
           <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Taka-Cost Averaging Edge</div>
         </div>
@@ -203,21 +261,25 @@
   <!-- ========================================================================= -->
   <!-- 3. INTERACTIVE FILTER & RECOMMENDATION ENGINE (CORE FEATURE)              -->
   <!-- ========================================================================= -->
-  <section id="section-engine" class="py-10 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+  <section id="section-engine"
+    class="py-10 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <!-- Section Header -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Core Recommendation Engine</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Core
+            Recommendation Engine</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
             Find Your Optimal SIP in 30 Seconds
           </h2>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-            Select your investment horizon, mandate, and risk profile to instantly reveal your #1 matched mutual fund with quantitative rationale.
+            Select your investment horizon, mandate, and risk profile to instantly reveal your #1 matched mutual fund
+            with quantitative rationale.
           </p>
         </div>
-        <div class="shrink-0 text-xs text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+        <div
+          class="shrink-0 text-xs text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400"></span>
           <span>Adaptive Multi-Horizon Matching</span>
         </div>
@@ -225,24 +287,30 @@
 
       <!-- Engine Main Container -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
+
         <!-- LEFT: Control Panel (5 Cols) -->
-        <div class="lg:col-span-5 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl flex flex-col justify-between transition-colors">
+        <div
+          class="lg:col-span-5 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl flex flex-col justify-between transition-colors">
           <div class="space-y-5">
-            
+
             <!-- 1. Horizon Selection -->
             <div>
               <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
                 1. Select Time Horizon
               </label>
               <div class="grid grid-cols-3 gap-2" id="horizonBtnGroup">
-                <button type="button" data-val="short" class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
-                  Short-Term<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">1&ndash;3 Yrs</span>
+                <button type="button" data-val="short"
+                  class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  Short-Term<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">1&ndash;3
+                    Yrs</span>
                 </button>
-                <button type="button" data-val="medium" class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
-                  Medium-Term<br><span class="text-[10px] font-normal text-emerald-700 dark:text-emerald-400/80">3&ndash;7 Yrs</span>
+                <button type="button" data-val="medium"
+                  class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
+                  Medium-Term<br><span
+                    class="text-[10px] font-normal text-emerald-700 dark:text-emerald-400/80">3&ndash;7 Yrs</span>
                 </button>
-                <button type="button" data-val="long" class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                <button type="button" data-val="long"
+                  class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
                   Long-Term<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">7+ Yrs</span>
                 </button>
               </div>
@@ -254,10 +322,12 @@
                 2. Select Mandate
               </label>
               <div class="grid grid-cols-2 gap-2" id="mandateBtnGroup">
-                <button type="button" data-val="conventional" class="mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
+                <button type="button" data-val="conventional"
+                  class="mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
                   🏛️ Conventional (All Assets)
                 </button>
-                <button type="button" data-val="islamic" class="mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                <button type="button" data-val="islamic"
+                  class="mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
                   🌙 Islamic (Shariah Sukuk)
                 </button>
               </div>
@@ -269,14 +339,20 @@
                 3. Risk Appetite
               </label>
               <div class="grid grid-cols-3 gap-2" id="riskBtnGroup">
-                <button type="button" data-val="conservative" class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
-                  🟢 Conservative<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">0% Equity / Debt</span>
+                <button type="button" data-val="conservative"
+                  class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  🟢 Conservative<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">0% Equity
+                    / Debt</span>
                 </button>
-                <button type="button" data-val="balanced" class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
-                  🟡 Balanced<br><span class="text-[10px] font-normal text-emerald-700 dark:text-emerald-400/80">40-50% Equity</span>
+                <button type="button" data-val="balanced"
+                  class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
+                  🟡 Balanced<br><span class="text-[10px] font-normal text-emerald-700 dark:text-emerald-400/80">40-50%
+                    Equity</span>
                 </button>
-                <button type="button" data-val="aggressive" class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
-                  🔴 Aggressive<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">70-80% Equity</span>
+                <button type="button" data-val="aggressive"
+                  class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  🔴 Aggressive<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">70-80%
+                    Equity</span>
                 </button>
               </div>
             </div>
@@ -284,29 +360,43 @@
             <!-- 4. Monthly Budget Slider -->
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <label for="engineBudgetSlider" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                <label for="engineBudgetSlider"
+                  class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                   4. Monthly Budget
                 </label>
-                <span id="engineBudgetDisplay" class="text-sm font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                <span id="engineBudgetDisplay"
+                  class="text-sm font-black text-emerald-600 dark:text-emerald-400 font-mono">
                   ৳10,000 / mo
                 </span>
               </div>
-              <input id="engineBudgetSlider" type="range" min="1000" max="100000" step="1000" value="10000" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
-              
+              <input id="engineBudgetSlider" type="range" min="1000" max="100000" step="1000" value="10000"
+                class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+
               <!-- Quick Budget Chips -->
               <div class="flex flex-wrap gap-1.5 mt-2">
-                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="2000">৳2,000</button>
-                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="5000">৳5,000</button>
-                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 transition" data-amt="10000">৳10,000</button>
-                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="25000">৳25,000</button>
-                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="50000">৳50,000</button>
+                <button type="button"
+                  class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition"
+                  data-amt="2000">৳2,000</button>
+                <button type="button"
+                  class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition"
+                  data-amt="5000">৳5,000</button>
+                <button type="button"
+                  class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 transition"
+                  data-amt="10000">৳10,000</button>
+                <button type="button"
+                  class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition"
+                  data-amt="25000">৳25,000</button>
+                <button type="button"
+                  class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition"
+                  data-amt="50000">৳50,000</button>
               </div>
             </div>
 
           </div>
 
           <!-- Helper indicator -->
-          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
+          <div
+            class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
             <span>✨ Live Quantitative Matching Active</span>
             <span class="text-emerald-600 dark:text-emerald-400 font-semibold">100% Algorithmic</span>
           </div>
@@ -314,19 +404,23 @@
 
         <!-- RIGHT: Dynamic Matched Recommendation Display (7 Cols) -->
         <div class="lg:col-span-7 flex flex-col">
-          <div id="recommendationCard" class="flex-1 bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-900 dark:to-slate-850 border-2 border-emerald-500/60 rounded-3xl p-6 sm:p-7 shadow-2xl relative overflow-hidden flex flex-col justify-between transition-colors">
-            
+          <div id="recommendationCard"
+            class="flex-1 bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-900 dark:to-slate-850 border-2 border-emerald-500/60 rounded-3xl p-6 sm:p-7 shadow-2xl relative overflow-hidden flex flex-col justify-between transition-colors">
+
             <!-- Accent glow badge -->
-            <div class="absolute -right-8 -top-8 w-44 h-44 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -right-8 -top-8 w-44 h-44 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none">
+            </div>
 
             <div>
               <!-- Match Score Banner -->
               <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div class="flex items-center gap-2">
-                  <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-emerald-500 text-slate-950 flex items-center gap-1.5 shadow-sm">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-emerald-500 text-slate-950 flex items-center gap-1.5 shadow-sm">
                     🏆 #1 Top Recommended Match
                   </span>
-                  <span id="matchScoreBadge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                  <span id="matchScoreBadge"
+                    class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
                     98% Profile Match
                   </span>
                 </div>
@@ -338,68 +432,96 @@
               <!-- Fund Name & AMC -->
               <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                 <div>
-                  <h3 id="matchFundName" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                  <h3 id="matchFundName"
+                    class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                     IDLC Balanced Fund
                   </h3>
                   <p id="matchAmcName" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
-                    Managed by <strong class="text-slate-800 dark:text-slate-200">IDLC Asset Management Ltd</strong> &bull; Conventional Balanced
+                    Managed by <strong class="text-slate-800 dark:text-slate-200">IDLC Asset Management Ltd</strong>
+                    &bull; Conventional Balanced
                   </p>
                 </div>
                 <!-- Big Number Highlight -->
                 <div class="shrink-0 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-3 text-right">
                   <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">3-Yr SIP Return</div>
-                  <div id="matchReturnBig" class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                  <div id="matchReturnBig"
+                    class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono">
                     +14.59%
                   </div>
-                  <div id="matchLumpReturn" class="text-[10px] text-slate-500 dark:text-slate-400">3Y Lump: +10.04% p.a.</div>
+                  <div id="matchLumpReturn" class="text-[10px] text-slate-500 dark:text-slate-400">3Y Lump: +10.04% p.a.
+                  </div>
                 </div>
               </div>
 
               <!-- Badges Row -->
               <div class="flex flex-wrap items-center gap-1.5 mt-4" id="matchBadgesContainer">
-                <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-500/15 border border-blue-500/30 text-blue-700 dark:text-blue-300">✓ BSEC Compliant</span>
-                <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300">✓ Tax-Free Return</span>
-                <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-purple-500/15 border border-purple-500/30 text-purple-700 dark:text-purple-300">✓ Free Life Insurance up to ৳1 Cr</span>
+                <span
+                  class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-500/15 border border-blue-500/30 text-blue-700 dark:text-blue-300">✓
+                  BSEC Compliant</span>
+                <span
+                  class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300">✓
+                  Tax-Free Return</span>
+                <span
+                  class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-purple-500/15 border border-purple-500/30 text-purple-700 dark:text-purple-300">✓
+                  Free Life Insurance up to ৳1 Cr</span>
               </div>
 
               <!-- "Why This Pick?" Deep Rationale Card -->
-              <div class="mt-5 p-4 rounded-2xl bg-slate-100 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm leading-relaxed">
-                <div class="flex items-center gap-1.5 font-bold text-emerald-600 dark:text-emerald-400 mb-1 text-xs uppercase tracking-wider">
+              <div
+                class="mt-5 p-4 rounded-2xl bg-slate-100 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm leading-relaxed">
+                <div
+                  class="flex items-center gap-1.5 font-bold text-emerald-600 dark:text-emerald-400 mb-1 text-xs uppercase tracking-wider">
                   <span>💡 Why This Pick?</span>
                 </div>
                 <p id="matchWhyText" class="text-slate-700 dark:text-slate-300">
-                  Ideal 3–7 year vehicle balancing 46.1% equity growth with 42.7% high-yield sovereign Treasury bonds. Low DSEX beta of 0.33 shielded unitholders during 2022–2025 corrections, and active SIPs include complimentary Life Insurance up to ৳1 crore.
+                  Ideal 3–7 year vehicle balancing 46.1% equity growth with 42.7% high-yield sovereign Treasury bonds.
+                  Low DSEX beta of 0.33 shielded unitholders during 2022–2025 corrections, and active SIPs include
+                  complimentary Life Insurance up to ৳1 crore.
                 </p>
               </div>
 
               <!-- Key Metrics Grid -->
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4">
-                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                <div
+                  class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
                   <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min. Monthly SIP</div>
-                  <div id="matchMinSip" class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳5,000 / mo</div>
+                  <div id="matchMinSip"
+                    class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳5,000 /
+                    mo</div>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                <div
+                  class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
                   <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Risk Level</div>
-                  <div id="matchRiskLevel" class="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-300 mt-0.5">🟡 Moderate (3/5)</div>
+                  <div id="matchRiskLevel"
+                    class="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-300 mt-0.5">🟡 Moderate
+                    (3/5)</div>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                <div
+                  class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
                   <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3Y Max Drawdown</div>
-                  <div id="matchMaxDd" class="text-xs sm:text-sm font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">-9.7%</div>
+                  <div id="matchMaxDd"
+                    class="text-xs sm:text-sm font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">-9.7%</div>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                <div
+                  class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
                   <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Expense / Fee</div>
-                  <div id="matchFee" class="text-xs sm:text-sm font-extrabold text-slate-700 dark:text-slate-300 mt-0.5">Tiered (0% Exit)</div>
+                  <div id="matchFee"
+                    class="text-xs sm:text-sm font-extrabold text-slate-700 dark:text-slate-300 mt-0.5">Tiered (0% Exit)
+                  </div>
                 </div>
               </div>
 
             </div>
 
             <!-- Action CTAs -->
-            <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-3">
-              <a id="matchCtaLink" href="https://idlc.com/aml/sip.php" target="_blank" rel="noopener" class="w-full sm:w-auto flex-1 text-center px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/25 transition">
+            <div
+              class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-3">
+              <a id="matchCtaLink" href="https://idlc.com/aml/sip.php" target="_blank" rel="noopener"
+                class="w-full sm:w-auto flex-1 text-center px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/25 transition">
                 Start SIP on Official AMC Site &rarr;
               </a>
-              <button id="matchInspectBtn" type="button" class="w-full sm:w-auto px-4 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition">
+              <button id="matchInspectBtn" type="button"
+                class="w-full sm:w-auto px-4 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition">
                 Inspect Asset Breakdown &amp; Crashes
               </button>
             </div>
@@ -415,13 +537,15 @@
   <!-- ========================================================================= -->
   <!-- 4. TOP PICKS BENCHMARK CARDS (THE CATEGORY WINNERS)                       -->
   <!-- ========================================================================= -->
-  <section id="section-top-picks" class="py-12 bg-white dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+  <section id="section-top-picks"
+    class="py-12 bg-white dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <!-- Section Header -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Institutional Champions</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Institutional
+            Champions</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
             Category Benchmark Winners (Oct 2026)
           </h2>
@@ -430,10 +554,16 @@
           </p>
         </div>
         <!-- Filter Tabs for Conventional vs Shariah -->
-        <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-950 p-1 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold">
-          <button id="tabShowAllPicks" type="button" class="px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition">All Winners</button>
-          <button id="tabShowConvPicks" type="button" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Conventional Only</button>
-          <button id="tabShowIslamicPicks" type="button" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Islamic Shariah</button>
+        <div
+          class="flex items-center gap-1 bg-slate-100 dark:bg-slate-950 p-1 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+          <button id="tabShowAllPicks" type="button"
+            class="px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition">All Winners</button>
+          <button id="tabShowConvPicks" type="button"
+            class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Conventional
+            Only</button>
+          <button id="tabShowIslamicPicks" type="button"
+            class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Islamic
+            Shariah</button>
         </div>
       </div>
 
@@ -441,11 +571,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="topPicksCardGrid">
 
         <!-- Card 1: Short-Term Winner (UCB Income Plus) -->
-        <div class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-emerald-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-emerald-400 transition group">
+        <div
+          class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-emerald-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-emerald-400 transition group">
           <div>
             <!-- Header Tag -->
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
+              <span
+                class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
                 Short-Term Winner (1&ndash;3 Yrs)
               </span>
               <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">Safety &amp; Liquidity</span>
@@ -454,32 +586,45 @@
             <!-- Fund & AMC -->
             <div class="flex items-start justify-between gap-2 mt-2">
               <div>
-                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition">
+                <h3
+                  class="text-xl font-black text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition">
                   UCB Income Plus Fund
                 </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">UCB Asset Management Ltd &bull; Conventional Debt</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">UCB Asset Management Ltd &bull;
+                  Conventional Debt</p>
               </div>
-              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">
+              <div
+                class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">
                 UCB
               </div>
             </div>
 
             <!-- Big Number -->
-            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
-              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+            <div
+              class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP
+                CAGR</div>
               <div class="text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">+14.89%</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Lump-Sum: <strong>+13.90% p.a.</strong> (Std Dev: 6.3%)</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Lump-Sum: <strong>+13.90% p.a.</strong>
+                (Std Dev: 6.3%)</div>
             </div>
 
             <!-- Badges -->
             <div class="flex flex-wrap gap-1.5 my-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free Returns</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">0.70% Flat Fee</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC
+                Compliant</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free
+                Returns</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">0.70%
+                Flat Fee</span>
             </div>
 
             <!-- Mini Metrics Row -->
-            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+            <div
+              class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
               <div>
                 <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
                 <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳5,000</div>
@@ -496,27 +641,32 @@
 
             <!-- Allocation Note -->
             <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-              <strong>Portfolio:</strong> 0% Equity, 59.1% Govt T-Bonds, 17.9% Cash, 13.6% Sub Bonds. 100% positive 12M periods.
+              <strong>Portfolio:</strong> 0% Equity, 59.1% Govt T-Bonds, 17.9% Cash, 13.6% Sub Bonds. 100% positive 12M
+              periods.
             </p>
           </div>
 
           <!-- CTAs -->
           <div class="mt-5 pt-4 flex items-center gap-2">
-            <a href="https://returnkoto.com/funds/ucb-income-plus-fund" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition">
+            <a href="https://returnkoto.com/funds/ucb-income-plus-fund" target="_blank" rel="noopener"
+              class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition">
               Start SIP &rarr;
             </a>
-            <button type="button" onclick="openFundModal('ucb-income-plus')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+            <button type="button" onclick="openFundModal('ucb-income-plus')"
+              class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
               Details
             </button>
           </div>
         </div>
 
         <!-- Card 2: Medium-Term Winner (IDLC Balanced) -->
-        <div class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-blue-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-blue-400 transition group">
+        <div
+          class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-blue-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-blue-400 transition group">
           <div>
             <!-- Header Tag -->
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-blue-500/20 text-blue-800 dark:text-blue-300 border border-blue-500/30">
+              <span
+                class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-blue-500/20 text-blue-800 dark:text-blue-300 border border-blue-500/30">
                 Medium-Term Winner (3&ndash;7 Yrs)
               </span>
               <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">Balanced Growth</span>
@@ -525,32 +675,45 @@
             <!-- Fund & AMC -->
             <div class="flex items-start justify-between gap-2 mt-2">
               <div>
-                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition">
+                <h3
+                  class="text-xl font-black text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition">
                   IDLC Balanced Fund
                 </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">IDLC Asset Management Ltd &bull; Conventional Balanced</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">IDLC Asset Management Ltd &bull;
+                  Conventional Balanced</p>
               </div>
-              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-blue-600 dark:text-blue-400 shrink-0">
+              <div
+                class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-blue-600 dark:text-blue-400 shrink-0">
                 IDLC
               </div>
             </div>
 
             <!-- Big Number -->
-            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
-              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+            <div
+              class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP
+                CAGR</div>
               <div class="text-3xl font-black text-blue-600 dark:text-blue-400 font-mono mt-0.5">+14.59%</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">5-Yr SIP: <strong>+10.69% p.a.</strong> (1Y SIP: +18.31%)</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">5-Yr SIP: <strong>+10.69% p.a.</strong> (1Y
+                SIP: +18.31%)</div>
             </div>
 
             <!-- Badges -->
             <div class="flex flex-wrap gap-1.5 my-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free Returns</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20">Free ৳1 Cr Life Ins.</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC
+                Compliant</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free
+                Returns</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20">Free
+                ৳1 Cr Life Ins.</span>
             </div>
 
             <!-- Mini Metrics Row -->
-            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+            <div
+              class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
               <div>
                 <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
                 <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳5,000</div>
@@ -573,21 +736,25 @@
 
           <!-- CTAs -->
           <div class="mt-5 pt-4 flex items-center gap-2">
-            <a href="https://idlc.com/aml/sip.php" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold text-xs text-center transition">
+            <a href="https://idlc.com/aml/sip.php" target="_blank" rel="noopener"
+              class="flex-1 py-2.5 px-3 rounded-xl bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold text-xs text-center transition">
               Start SIP &rarr;
             </a>
-            <button type="button" onclick="openFundModal('idlc-balanced')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+            <button type="button" onclick="openFundModal('idlc-balanced')"
+              class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
               Details
             </button>
           </div>
         </div>
 
         <!-- Card 3: Long-Term Winner (EDGE AMC Growth) -->
-        <div class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-amber-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-amber-400 transition group">
+        <div
+          class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-amber-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-amber-400 transition group">
           <div>
             <!-- Header Tag -->
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30">
+              <span
+                class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30">
                 Long-Term Winner (7+ Yrs)
               </span>
               <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">#1 3Y SIP in BD</span>
@@ -596,32 +763,44 @@
             <!-- Fund & AMC -->
             <div class="flex items-start justify-between gap-2 mt-2">
               <div>
-                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300 transition">
+                <h3
+                  class="text-xl font-black text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300 transition">
                   EDGE AMC Growth Fund
                 </h3>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">EDGE AMC Limited &bull; Equity Growth</p>
               </div>
-              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-amber-600 dark:text-amber-400 shrink-0">
+              <div
+                class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-amber-600 dark:text-amber-400 shrink-0">
                 EDGE
               </div>
             </div>
 
             <!-- Big Number -->
-            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
-              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+            <div
+              class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP
+                CAGR</div>
               <div class="text-3xl font-black text-amber-600 dark:text-amber-400 font-mono mt-0.5">+16.19%</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">5-Yr SIP: <strong>+11.28% p.a.</strong> (Incep: +10.26%)</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">5-Yr SIP: <strong>+11.28% p.a.</strong>
+                (Incep: +10.26%)</div>
             </div>
 
             <!-- Badges -->
             <div class="flex flex-wrap gap-1.5 my-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free Returns</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">2.30% Audited TER</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC
+                Compliant</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free
+                Returns</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">2.30%
+                Audited TER</span>
             </div>
 
             <!-- Mini Metrics Row -->
-            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+            <div
+              class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
               <div>
                 <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
                 <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳1,000</div>
@@ -638,27 +817,32 @@
 
             <!-- Allocation Note -->
             <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-              <strong>Portfolio:</strong> 80.3% Common Equity, 9.4% Cash, 7.1% Pref Shares. Outperformed DSEX by >1,000 bps.
+              <strong>Portfolio:</strong> 80.3% Common Equity, 9.4% Cash, 7.1% Pref Shares. Outperformed DSEX by >1,000
+              bps.
             </p>
           </div>
 
           <!-- CTAs -->
           <div class="mt-5 pt-4 flex items-center gap-2">
-            <a href="https://www.edgeamc.com/mutual-fund" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition">
+            <a href="https://www.edgeamc.com/mutual-fund" target="_blank" rel="noopener"
+              class="flex-1 py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition">
               Start SIP &rarr;
             </a>
-            <button type="button" onclick="openFundModal('edge-amc-growth')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+            <button type="button" onclick="openFundModal('edge-amc-growth')"
+              class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
               Details
             </button>
           </div>
         </div>
 
         <!-- Card 4: Islamic Shariah Benchmark Winner (EDGE Al-Amin Shariah) -->
-        <div class="top-pick-card islamic-pick bg-slate-50 dark:bg-slate-900 border-2 border-teal-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-teal-400 transition group">
+        <div
+          class="top-pick-card islamic-pick bg-slate-50 dark:bg-slate-900 border-2 border-teal-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-teal-400 transition group">
           <div>
             <!-- Header Tag -->
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-teal-500/20 text-teal-800 dark:text-teal-300 border border-teal-500/30">
+              <span
+                class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-teal-500/20 text-teal-800 dark:text-teal-300 border border-teal-500/30">
                 #1 Islamic / Shariah Winner
               </span>
               <span class="text-[11px] font-bold text-teal-700 dark:text-teal-300">Govt Sukuk Backed</span>
@@ -667,32 +851,45 @@
             <!-- Fund & AMC -->
             <div class="flex items-start justify-between gap-2 mt-2">
               <div>
-                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition">
+                <h3
+                  class="text-xl font-black text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition">
                   EDGE Al-Amin Shariah Fund
                 </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">EDGE AMC Limited &bull; Shariah Consumer &amp; Sukuk</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">EDGE AMC Limited &bull; Shariah Consumer
+                  &amp; Sukuk</p>
               </div>
-              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-teal-600 dark:text-teal-400 shrink-0">
+              <div
+                class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-teal-600 dark:text-teal-400 shrink-0">
                 🌙
               </div>
             </div>
 
             <!-- Big Number -->
-            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
-              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+            <div
+              class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP
+                CAGR</div>
               <div class="text-3xl font-black text-teal-600 dark:text-teal-400 font-mono mt-0.5">+7.90%</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">2-Yr CAGR: <strong>+9.59% p.a.</strong> (#1 Shariah in BD)</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">2-Yr CAGR: <strong>+9.59% p.a.</strong> (#1
+                Shariah in BD)</div>
             </div>
 
             <!-- Badges -->
             <div class="flex flex-wrap gap-1.5 my-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20">100% Shariah Certified</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">2.05% Audited TER</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC
+                Compliant</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20">100%
+                Shariah Certified</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">2.05%
+                Audited TER</span>
             </div>
 
             <!-- Mini Metrics Row -->
-            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+            <div
+              class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
               <div>
                 <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
                 <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳1,000</div>
@@ -715,10 +912,12 @@
 
           <!-- CTAs -->
           <div class="mt-5 pt-4 flex items-center gap-2">
-            <a href="https://returnkoto.com/funds/edge-al-amin-shariah-consumer-fund" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs text-center transition">
+            <a href="https://returnkoto.com/funds/edge-al-amin-shariah-consumer-fund" target="_blank" rel="noopener"
+              class="flex-1 py-2.5 px-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs text-center transition">
               Start SIP &rarr;
             </a>
-            <button type="button" onclick="openFundModal('edge-al-amin-shariah')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+            <button type="button" onclick="openFundModal('edge-al-amin-shariah')"
+              class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
               Details
             </button>
           </div>
@@ -732,97 +931,133 @@
   <!-- ========================================================================= -->
   <!-- 5. WEALTH PROJECTION CALCULATOR WIDGET                                    -->
   <!-- ========================================================================= -->
-  <section id="section-calculator" class="py-12 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+  <section id="section-calculator"
+    class="py-12 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-850 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl transition-colors">
-        
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+
+      <div
+        class="bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-850 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl transition-colors">
+
+        <div
+          class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Finance Act 2026 Interactive Widget</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Finance Act
+              2026 Interactive Widget</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
               SIP Wealth &amp; Tax Rebate Calculator
             </h2>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-              Calculate projected maturity value with monthly compounding and 10% annual income tax rebate under the Income Tax Act 2023 / Finance Act 2026.
+              Calculate projected maturity value with monthly compounding and 10% annual income tax rebate under the
+              Income Tax Act 2023 / Finance Act 2026.
             </p>
           </div>
           <!-- Quick Preset Pill -->
           <div class="flex flex-wrap gap-1.5 shrink-0 text-xs font-semibold">
-            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border border-emerald-500/20">10% Personal Tax Rebate</span>
-            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 dark:text-blue-400 border border-blue-500/20">Cap: ৳75 Lakh/Yr</span>
+            <span
+              class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border border-emerald-500/20">10%
+              Personal Tax Rebate</span>
+            <span
+              class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 dark:text-blue-400 border border-blue-500/20">Cap:
+              ৳75 Lakh/Yr</span>
           </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
-          
+
           <!-- INPUTS (5 Cols) -->
           <div class="lg:col-span-5 space-y-6">
-            
+
             <!-- 1. Monthly SIP Amount -->
             <div>
               <div class="flex items-center justify-between mb-2">
-                <label for="calcMonthlyInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                <label for="calcMonthlyInput"
+                  class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                   Monthly Contribution
                 </label>
                 <div class="flex items-center gap-1">
                   <span class="text-slate-500 dark:text-slate-400 font-mono text-sm">৳</span>
-                  <input id="calcMonthlyInput" type="number" min="1000" max="500000" step="1000" value="10000" class="w-28 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm font-extrabold text-emerald-600 dark:text-emerald-400 font-mono text-right focus:outline-none focus:border-emerald-500">
+                  <input id="calcMonthlyInput" type="number" min="1000" max="500000" step="1000" value="10000"
+                    class="w-28 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm font-extrabold text-emerald-600 dark:text-emerald-400 font-mono text-right focus:outline-none focus:border-emerald-500">
                 </div>
               </div>
-              <input id="calcMonthlySlider" type="range" min="1000" max="100000" step="1000" value="10000" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
-              
-              <div class="flex justify-between gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 font-semibold">
-                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="5000">৳5K</button>
-                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white font-bold text-emerald-600 dark:text-emerald-400" data-v="10000">৳10K</button>
-                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="20000">৳20K</button>
-                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="35000">৳35K</button>
-                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="50000">৳50K</button>
+              <input id="calcMonthlySlider" type="range" min="1000" max="100000" step="1000" value="10000"
+                class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+
+              <div
+                class="flex justify-between gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 font-semibold">
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white"
+                  data-v="5000">৳5K</button>
+                <button type="button"
+                  class="calc-preset-amt hover:text-slate-900 dark:hover:text-white font-bold text-emerald-600 dark:text-emerald-400"
+                  data-v="10000">৳10K</button>
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white"
+                  data-v="20000">৳20K</button>
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white"
+                  data-v="35000">৳35K</button>
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white"
+                  data-v="50000">৳50K</button>
               </div>
             </div>
 
             <!-- 2. Investment Duration (Years) -->
             <div>
               <div class="flex items-center justify-between mb-2">
-                <label for="calcYearsSlider" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                <label for="calcYearsSlider"
+                  class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                   Time Period (Years)
                 </label>
                 <span id="calcYearsDisplay" class="text-sm font-black text-slate-900 dark:text-white font-mono">
                   5 Years (60 Months)
                 </span>
               </div>
-              <input id="calcYearsSlider" type="range" min="1" max="25" step="1" value="5" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
-              
-              <div class="flex justify-between gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 font-semibold">
-                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="3">3 Yrs</button>
-                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white font-bold text-emerald-600 dark:text-emerald-400" data-y="5">5 Yrs</button>
-                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="7">7 Yrs</button>
-                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="10">10 Yrs</button>
-                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="15">15 Yrs</button>
+              <input id="calcYearsSlider" type="range" min="1" max="25" step="1" value="5"
+                class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+
+              <div
+                class="flex justify-between gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 font-semibold">
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="3">3
+                  Yrs</button>
+                <button type="button"
+                  class="calc-preset-yr hover:text-slate-900 dark:hover:text-white font-bold text-emerald-600 dark:text-emerald-400"
+                  data-y="5">5 Yrs</button>
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="7">7
+                  Yrs</button>
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="10">10
+                  Yrs</button>
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="15">15
+                  Yrs</button>
               </div>
             </div>
 
             <!-- 3. Expected Return % -->
             <div>
               <div class="flex items-center justify-between mb-2">
-                <label for="calcRateSlider" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                <label for="calcRateSlider"
+                  class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                   Expected Return (% p.a.)
                 </label>
                 <span id="calcRateDisplay" class="text-sm font-black text-emerald-600 dark:text-emerald-400 font-mono">
                   14.0% p.a.
                 </span>
               </div>
-              <input id="calcRateSlider" type="range" min="6" max="22" step="0.5" value="14" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
-              
+              <input id="calcRateSlider" type="range" min="6" max="22" step="0.5" value="14"
+                class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+
               <!-- Category Benchmarks -->
               <div class="flex flex-wrap gap-1.5 mt-2">
-                <button type="button" class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300" data-r="12.5">
+                <button type="button"
+                  class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300"
+                  data-r="12.5">
                   Debt Benchmark (12.5%)
                 </button>
-                <button type="button" class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30" data-r="14.0">
+                <button type="button"
+                  class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30"
+                  data-r="14.0">
                   Balanced (14.0%)
                 </button>
-                <button type="button" class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300" data-r="16.0">
+                <button type="button"
+                  class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300"
+                  data-r="16.0">
                   Equity Growth (16.0%)
                 </button>
               </div>
@@ -831,10 +1066,12 @@
             <!-- 4. Optional Annual Taxable Income -->
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <label for="calcIncomeInput" class="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                <label for="calcIncomeInput"
+                  class="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
                   Annual Taxable Income (for 3% Cap Check)
                 </label>
-                <input id="calcIncomeInput" type="number" min="300000" max="10000000" step="50000" value="1200000" class="w-28 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 font-mono text-right">
+                <input id="calcIncomeInput" type="number" min="300000" max="10000000" step="50000" value="1200000"
+                  class="w-28 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 font-mono text-right">
               </div>
               <p class="text-[10px] text-slate-500 dark:text-slate-400">
                 Under Finance Act 2026, rebate is 10% of investment, capped at 3% of total income or ৳7,50,000.
@@ -844,17 +1081,21 @@
           </div>
 
           <!-- OUTPUTS (7 Cols) -->
-          <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-950/80 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between transition-colors">
-            
+          <div
+            class="lg:col-span-7 bg-slate-50 dark:bg-slate-950/80 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between transition-colors">
+
             <div>
               <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
                 Projected Wealth Growth &amp; Tax Rebate Breakdown
               </div>
 
               <!-- Main Hero Output: Estimated Final Value -->
-              <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-transparent border border-emerald-500/30">
-                <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Estimated Final Wealth (Maturity Value)</div>
-                <div id="calcFinalValue" class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-mono mt-1">
+              <div
+                class="p-5 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-transparent border border-emerald-500/30">
+                <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Estimated
+                  Final Wealth (Maturity Value)</div>
+                <div id="calcFinalValue"
+                  class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-mono mt-1">
                   ৳10,48,913
                 </div>
                 <div class="flex items-center gap-2 mt-1 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
@@ -865,32 +1106,42 @@
 
               <!-- Output Grid -->
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
-                
+
                 <!-- Card 1: Principal -->
-                <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div
+                  class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
                   <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Total Invested</div>
-                  <div id="calcTotalInvested" class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">
+                  <div id="calcTotalInvested"
+                    class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">
                     ৳6,00,000
                   </div>
-                  <div id="calcMonthsSummary" class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">60 months &bull; ৳10K/mo</div>
+                  <div id="calcMonthsSummary" class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">60 months
+                    &bull; ৳10K/mo</div>
                 </div>
 
                 <!-- Card 2: Annual Tax Rebate -->
-                <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-                  <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Annual Tax Rebate</div>
-                  <div id="calcAnnualRebate" class="text-lg sm:text-xl font-extrabold text-teal-600 dark:text-teal-300 mt-0.5 font-mono">
+                <div
+                  class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Annual Tax Rebate
+                  </div>
+                  <div id="calcAnnualRebate"
+                    class="text-lg sm:text-xl font-extrabold text-teal-600 dark:text-teal-300 mt-0.5 font-mono">
                     ৳12,000 / yr
                   </div>
                   <div class="text-[10px] text-teal-600 dark:text-teal-400/80 mt-0.5">10% direct credit</div>
                 </div>
 
                 <!-- Card 3: Total Cumulative Rebate -->
-                <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-                  <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Total Tax Saved</div>
-                  <div id="calcTotalRebate" class="text-lg sm:text-xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 font-mono">
+                <div
+                  class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Total Tax Saved
+                  </div>
+                  <div id="calcTotalRebate"
+                    class="text-lg sm:text-xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 font-mono">
                     ৳60,000
                   </div>
-                  <div id="calcTaxDuration" class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Across 5 tax years</div>
+                  <div id="calcTaxDuration" class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Across 5 tax
+                    years</div>
                 </div>
 
               </div>
@@ -902,22 +1153,29 @@
                   <span id="calcRatioText">57% Principal &bull; 43% Growth</span>
                 </div>
                 <div class="w-full h-3 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden flex">
-                  <div id="calcBarPrincipal" class="bg-blue-500 h-full transition-all duration-300" style="width: 57%;"></div>
-                  <div id="calcBarProfit" class="bg-emerald-500 dark:bg-emerald-400 h-full transition-all duration-300" style="width: 43%;"></div>
+                  <div id="calcBarPrincipal" class="bg-blue-500 h-full transition-all duration-300" style="width: 57%;">
+                  </div>
+                  <div id="calcBarProfit" class="bg-emerald-500 dark:bg-emerald-400 h-full transition-all duration-300"
+                    style="width: 43%;"></div>
                 </div>
                 <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-1">
-                  <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Principal Contribution</span>
-                  <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400"></span> Compound Gains</span>
+                  <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    Principal Contribution</span>
+                  <span class="flex items-center gap-1.5"><span
+                      class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400"></span> Compound Gains</span>
                 </div>
               </div>
 
             </div>
 
             <!-- Tax Law Note Callout -->
-            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-start gap-2">
+            <div
+              class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-start gap-2">
               <span class="text-teal-600 dark:text-teal-400 text-sm">ℹ️</span>
               <p>
-                <strong>Finance Act 2026 Mandate:</strong> Investment in open-end mutual fund units qualifies for a 10% tax rebate under Section 78 of the Income Tax Act 2023. Capital gains up to ৳50 Lakh are 100% tax-exempt for individuals.
+                <strong>Finance Act 2026 Mandate:</strong> Investment in open-end mutual fund units qualifies for a 10%
+                tax rebate under Section 78 of the Income Tax Act 2023. Capital gains up to ৳50 Lakh are 100% tax-exempt
+                for individuals.
               </p>
             </div>
 
@@ -933,49 +1191,59 @@
   <!-- ========================================================================= -->
   <!-- 6. MASTER COMPARATIVE DATA TABLE (ALL 26 ANALYZED FUNDS + SUSPENDED)      -->
   <!-- ========================================================================= -->
-  <section id="section-screener" class="py-12 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+  <section id="section-screener"
+    class="py-12 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <!-- Table Header & Controls -->
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Institutional Database</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Institutional
+            Database</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
             Comparative Matrix of Active &amp; Flagged Mutual Funds
           </h2>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-            Sortable, filterable screener covering 26 analyzed open-end mutual funds and mandatory regulatory exclusion list (UFS, RACE, LR Global).
+            Sortable, filterable screener covering 26 analyzed open-end mutual funds and mandatory regulatory exclusion
+            list (UFS, RACE, LR Global).
           </p>
         </div>
 
         <!-- Right stats & toggles -->
         <div class="flex flex-wrap items-center gap-2">
-          <span id="tableCountBadge" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">
+          <span id="tableCountBadge"
+            class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">
             Showing 33 Funds
           </span>
-          <button id="btnToggleTableCollapse" type="button" class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 transition">
+          <button id="btnToggleTableCollapse" type="button"
+            class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 transition">
             Collapse Table ▲
           </button>
         </div>
       </div>
 
       <!-- FILTER CONTROLS BAR -->
-      <div class="bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 mb-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs transition-colors">
-        
+      <div
+        class="bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 mb-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs transition-colors">
+
         <!-- Search Input -->
         <div class="lg:col-span-2">
-          <label for="tableSearchInput" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+          <label for="tableSearchInput"
+            class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
             Search Fund or AMC
           </label>
-          <input id="tableSearchInput" type="text" placeholder="e.g. UCB, IDLC, EDGE, Ekush, Shanta, VIPB..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500">
+          <input id="tableSearchInput" type="text" placeholder="e.g. UCB, IDLC, EDGE, Ekush, Shanta, VIPB..."
+            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500">
         </div>
 
         <!-- Filter by Mandate -->
         <div>
-          <label for="tableMandateSelect" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+          <label for="tableMandateSelect"
+            class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
             Mandate
           </label>
-          <select id="tableMandateSelect" class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+          <select id="tableMandateSelect"
+            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
             <option value="ALL">All Mandates</option>
             <option value="Conventional">Conventional</option>
             <option value="Islamic (Shariah)">Islamic (Shariah)</option>
@@ -984,10 +1252,12 @@
 
         <!-- Filter by Category -->
         <div>
-          <label for="tableTypeSelect" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+          <label for="tableTypeSelect"
+            class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
             Asset Class
           </label>
-          <select id="tableTypeSelect" class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+          <select id="tableTypeSelect"
+            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
             <option value="ALL">All Categories</option>
             <option value="Debt">Debt (Fixed Income)</option>
             <option value="Balanced">Balanced (Hybrid)</option>
@@ -997,10 +1267,12 @@
 
         <!-- Filter by Status -->
         <div>
-          <label for="tableStatusSelect" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+          <label for="tableStatusSelect"
+            class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
             Status
           </label>
-          <select id="tableStatusSelect" class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+          <select id="tableStatusSelect"
+            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
             <option value="ALL">All Statuses</option>
             <option value="Active">✅ Active Only</option>
             <option value="Watchlist">⚠️ Watchlist Only</option>
@@ -1012,31 +1284,39 @@
 
       <!-- COLLAPSIBLE TABLE CONTAINER -->
       <div id="tableCollapseWrapper" class="transition-all duration-300">
-        <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xl">
+        <div
+          class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xl">
           <table class="w-full text-left border-collapse text-xs">
-            
+
             <!-- Table Header -->
             <thead>
-              <tr class="bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 uppercase tracking-wider text-[11px] border-b border-slate-200 dark:border-slate-800">
-                <th class="py-3.5 px-4 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('name')">
+              <tr
+                class="bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 uppercase tracking-wider text-[11px] border-b border-slate-200 dark:border-slate-800">
+                <th class="py-3.5 px-4 font-bold cursor-pointer hover:text-emerald-500 transition"
+                  onclick="sortTable('name')">
                   Fund Name &amp; AMC ⇅
                 </th>
-                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('type')">
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition"
+                  onclick="sortTable('type')">
                   Type ⇅
                 </th>
-                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('sip3y')">
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition"
+                  onclick="sortTable('sip3y')">
                   3Y SIP Return ⇅
                 </th>
-                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('cagr5y')">
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition"
+                  onclick="sortTable('cagr5y')">
                   5Y CAGR ⇅
                 </th>
                 <th class="py-3.5 px-3 font-bold">
                   Expense / Fee
                 </th>
-                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('minSip')">
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition"
+                  onclick="sortTable('minSip')">
                   Min SIP ⇅
                 </th>
-                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('risk')">
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition"
+                  onclick="sortTable('risk')">
                   Risk Score ⇅
                 </th>
                 <th class="py-3.5 px-3 font-bold text-center">
@@ -1049,7 +1329,8 @@
             </thead>
 
             <!-- Table Body populated by JS -->
-            <tbody id="screenerTableBody" class="divide-y divide-slate-200 dark:divide-slate-800/70 text-slate-800 dark:text-slate-200">
+            <tbody id="screenerTableBody"
+              class="divide-y divide-slate-200 dark:divide-slate-800/70 text-slate-800 dark:text-slate-200">
               <!-- Rendered via JS -->
             </tbody>
 
@@ -1063,13 +1344,16 @@
   <!-- ========================================================================= -->
   <!-- 7. EDUCATIONAL & SAFETY SECTION (RED FLAGS + 3-STEP START GUIDE)          -->
   <!-- ========================================================================= -->
-  <section id="section-safety" class="py-12 bg-slate-50 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+  <section id="section-safety"
+    class="py-12 bg-slate-50 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
+
       <!-- 7.1 RED FLAGS WARNING BOX -->
-      <div class="rounded-3xl border-2 border-rose-500/50 bg-rose-50/60 dark:bg-gradient-to-br dark:from-rose-950/40 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-8 shadow-2xl relative overflow-hidden transition-colors">
+      <div
+        class="rounded-3xl border-2 border-rose-500/50 bg-rose-50/60 dark:bg-gradient-to-br dark:from-rose-950/40 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-8 shadow-2xl relative overflow-hidden transition-colors">
         <div class="flex items-center gap-3 pb-4 border-b border-rose-300 dark:border-rose-500/30">
-          <div class="w-10 h-10 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-600 dark:text-rose-400 text-xl font-black">
+          <div
+            class="w-10 h-10 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-600 dark:text-rose-400 text-xl font-black">
             ⚠️
           </div>
           <div>
@@ -1083,37 +1367,51 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6 text-xs sm:text-sm">
-          
+
           <!-- UFS Card -->
-          <div class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
+          <div
+            class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
             <div class="flex items-center justify-between">
               <span class="font-extrabold text-rose-800 dark:text-rose-400">1. Universal Financial Solutions</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">EMBEZZLEMENT</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">EMBEZZLEMENT</span>
             </div>
             <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
-              BSEC and BFIU confirmed former MD Syed Hamza Alamgir embezzled <strong>৳158–235 Crore</strong> across 5 funds (<em>UFS-Bank Asia, UFS-IBBL, UFS-Padma, UFS-Popular, UFS-Pragati</em>) via forged FDR receipts. All funds suspended with 0 active AUM.
+              BSEC and BFIU confirmed former MD Syed Hamza Alamgir embezzled <strong>৳158–235 Crore</strong> across 5
+              funds (<em>UFS-Bank Asia, UFS-IBBL, UFS-Padma, UFS-Popular, UFS-Pragati</em>) via forged FDR receipts. All
+              funds suspended with 0 active AUM.
             </p>
           </div>
 
           <!-- RACE Card -->
-          <div class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
+          <div
+            class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
             <div class="flex items-center justify-between">
               <span class="font-extrabold text-rose-800 dark:text-rose-400">2. Bangladesh RACE Management</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">BFIU FREEZE</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">BFIU
+                FREEZE</span>
             </div>
             <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
-              BFIU froze fund bank accounts and BSEC suspended BO accounts. Appellate Division cleared BSEC probe enforcement in June 2026. <em>RACE Financial Inclusion</em> YTD -14.60%; <em>RACE Special Opps</em> 2025 return -21.50%.
+              BFIU froze fund bank accounts and BSEC suspended BO accounts. Appellate Division cleared BSEC probe
+              enforcement in June 2026. <em>RACE Financial Inclusion</em> YTD -14.60%; <em>RACE Special Opps</em> 2025
+              return -21.50%.
             </p>
           </div>
 
           <!-- LR Global Card -->
-          <div class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
+          <div
+            class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
             <div class="flex items-center justify-between">
               <span class="font-extrabold text-rose-800 dark:text-rose-400">3. LR Global Bangladesh AMC</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">MANAGER REMOVED</span>
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">MANAGER
+                REMOVED</span>
             </div>
             <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
-              In February 2026, BSEC formally removed LR Global as asset manager of 6 mutual funds (including <em>DBH 1st MF</em> and <em>AIBL 1st Islamic</em>) and fined directors following Rule 56 breaches involving unauthorized illiquid placements.
+              In February 2026, BSEC formally removed LR Global as asset manager of 6 mutual funds (including <em>DBH
+                1st MF</em> and <em>AIBL 1st Islamic</em>) and fined directors following Rule 56 breaches involving
+              unauthorized illiquid placements.
             </p>
           </div>
 
@@ -1123,61 +1421,75 @@
       <!-- 7.2 3-STEP VISUAL HOW-TO-START GUIDE -->
       <div>
         <div class="text-center max-w-2xl mx-auto mb-8">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Fast-Track Execution</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Fast-Track
+            Execution</span>
           <h3 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
             How to Start an SIP in Bangladesh (3-Step Roadmap)
           </h3>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-            No stock broker needed. Open-end mutual funds can be purchased directly from the Asset Management Company online.
+            No stock broker needed. Open-end mutual funds can be purchased directly from the Asset Management Company
+            online.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
+
           <!-- Step 1 -->
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
+          <div
+            class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
             <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-black text-xl">
+              <div
+                class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-black text-xl">
                 1
               </div>
               <h4 class="text-base font-extrabold text-slate-900 dark:text-white">Digital KYC &amp; Verification</h4>
               <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Prepare your National ID (NID), active bank routing &amp; account number, TIN certificate, and nominee photo. Most AMCs now support paperless e-KYC.
+                Prepare your National ID (NID), active bank routing &amp; account number, TIN certificate, and nominee
+                photo. Most AMCs now support paperless e-KYC.
               </p>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold">
+            <div
+              class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold">
               Time: 5–10 Minutes
             </div>
           </div>
 
           <!-- Step 2 -->
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
+          <div
+            class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
             <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-black text-xl">
+              <div
+                class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-black text-xl">
                 2
               </div>
               <h4 class="text-base font-extrabold text-slate-900 dark:text-white">Select AMC &amp; Register Portal</h4>
               <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Create your investor profile on official portals like <em>IDLC AML SIP</em>, <em>MyShanta</em>, <em>UCB Asset</em>, or platforms like <em>ReturnKoto / Bini</em>.
+                Create your investor profile on official portals like <em>IDLC AML SIP</em>, <em>MyShanta</em>, <em>UCB
+                  Asset</em>, or platforms like <em>ReturnKoto / Bini</em>.
               </p>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-blue-600 dark:text-blue-400 font-semibold">
+            <div
+              class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-blue-600 dark:text-blue-400 font-semibold">
               BSEC Regulated Direct Account
             </div>
           </div>
 
           <!-- Step 3 -->
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
+          <div
+            class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
             <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-black text-xl">
+              <div
+                class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-black text-xl">
                 3
               </div>
               <h4 class="text-base font-extrabold text-slate-900 dark:text-white">Setup Automated Auto-Debit</h4>
               <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Connect your bank via BEFTN/NPSB mandate, internet banking, or bKash auto-debit. Units will be allotted on the NAV date every month automatically.
+                Connect your bank via BEFTN/NPSB mandate, internet banking, or bKash auto-debit. Units will be allotted
+                on the NAV date every month automatically.
               </p>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-purple-600 dark:text-purple-400 font-semibold">
+            <div
+              class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-purple-600 dark:text-purple-400 font-semibold">
               Automate &amp; Compound
             </div>
           </div>
@@ -1191,21 +1503,26 @@
   <!-- ========================================================================= -->
   <!-- 8. MODAL / DRAWER FOR FUND DEEP DIVE                                      -->
   <!-- ========================================================================= -->
-  <div id="fundModalBackdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div id="fundModalContent" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl max-w-2xl w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto transition-colors">
-      
+  <div id="fundModalBackdrop"
+    class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div id="fundModalContent"
+      class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl max-w-2xl w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto transition-colors">
+
       <!-- Close Button -->
-      <button type="button" onclick="closeFundModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 dark:hover:text-white text-xl font-bold p-1">
+      <button type="button" onclick="closeFundModal()"
+        class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 dark:hover:text-white text-xl font-bold p-1">
         ✕
       </button>
 
       <!-- Modal Header -->
       <div class="pr-8">
         <div class="flex items-center gap-2 mb-1.5">
-          <span id="modalFundBadge" class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
+          <span id="modalFundBadge"
+            class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
             Fund Details
           </span>
-          <span id="modalRiskBadge" class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+          <span id="modalRiskBadge"
+            class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
             Risk: 2/5
           </span>
         </div>
@@ -1221,15 +1538,18 @@
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 my-5">
         <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
           <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3-Yr SIP Return</div>
-          <div id="modalSip3y" class="text-base font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">+14.89%</div>
+          <div id="modalSip3y" class="text-base font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">
+            +14.89%</div>
         </div>
         <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
           <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3-Yr Lump CAGR</div>
-          <div id="modalCagr3y" class="text-base font-black text-slate-900 dark:text-white font-mono mt-0.5">+13.90%</div>
+          <div id="modalCagr3y" class="text-base font-black text-slate-900 dark:text-white font-mono mt-0.5">+13.90%
+          </div>
         </div>
         <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
           <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3Y Max Drawdown</div>
-          <div id="modalMaxDd" class="text-base font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">-4.0%</div>
+          <div id="modalMaxDd" class="text-base font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">
+            -4.0%</div>
         </div>
         <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
           <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Current NAV</div>
@@ -1253,28 +1573,33 @@
             Crisis Resilience &amp; Multi-Cycle Notes
           </div>
           <p id="modalCrashNotes" class="text-slate-700 dark:text-slate-300 leading-relaxed">
-            100% positive rolling 12-month periods since inception. Navigated post-2023 rate hikes with ultra-low downside deviation.
+            100% positive rolling 12-month periods since inception. Navigated post-2023 rate hikes with ultra-low
+            downside deviation.
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="bg-slate-50 dark:bg-slate-950 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
             <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Fee Structure &amp; TER</div>
-            <div id="modalFeeText" class="font-bold text-slate-900 dark:text-white mt-0.5 text-xs">Mgmt Fee: 0.70% Flat</div>
+            <div id="modalFeeText" class="font-bold text-slate-900 dark:text-white mt-0.5 text-xs">Mgmt Fee: 0.70% Flat
+            </div>
           </div>
           <div class="bg-slate-50 dark:bg-slate-950 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
             <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Minimum Monthly SIP</div>
-            <div id="modalMinSip" class="font-bold text-emerald-600 dark:text-emerald-400 mt-0.5 text-xs">৳5,000 / month</div>
+            <div id="modalMinSip" class="font-bold text-emerald-600 dark:text-emerald-400 mt-0.5 text-xs">৳5,000 / month
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Modal Footer CTA -->
       <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
-        <button type="button" onclick="closeFundModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition">
+        <button type="button" onclick="closeFundModal()"
+          class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition">
           Close
         </button>
-        <a id="modalExternalLink" href="#" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">
+        <a id="modalExternalLink" href="#" target="_blank" rel="noopener"
+          class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">
           Visit Official Portal / Page &rarr;
         </a>
       </div>
@@ -1287,10 +1612,11 @@
   <!-- ========================================================================= -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-10 border-t border-slate-800 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-      
+
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-sm">
+          <div
+            class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-sm">
             ৳
           </div>
           <span class="font-bold text-slate-200">SIP Wealth Builder &bull; Bangladesh Hub</span>
@@ -1303,10 +1629,17 @@
       <!-- Legal Disclaimer -->
       <div class="text-[11px] text-slate-400 leading-relaxed space-y-2">
         <p>
-          <strong>Regulatory &amp; Investment Disclaimer:</strong> Mutual fund investments in Bangladesh are subject to market risks. Please read all fund prospectuses, Trust Deeds, and periodic NAV disclosures carefully before investing. Historical returns (CAGR / SIP XIRR) do not guarantee future performance. This platform compiles publicly verified regulatory filings from the Bangladesh Securities and Exchange Commission (BSEC), Dhaka Stock Exchange (DSE), and audited AMC annual disclosures for educational and informational purposes.
+          <strong>Regulatory &amp; Investment Disclaimer:</strong> Mutual fund investments in Bangladesh are subject to
+          market risks. Please read all fund prospectuses, Trust Deeds, and periodic NAV disclosures carefully before
+          investing. Historical returns (CAGR / SIP XIRR) do not guarantee future performance. This platform compiles
+          publicly verified regulatory filings from the Bangladesh Securities and Exchange Commission (BSEC), Dhaka
+          Stock Exchange (DSE), and audited AMC annual disclosures for educational and informational purposes.
         </p>
         <p>
-          <strong>Tax Credit Notice:</strong> Mutual fund tax rebate under Section 78 of the Income Tax Act 2023 (as amended by Finance Act 2026) is calculated as 10% of eligible annual investment, subject to a maximum cap of ৳7,50,000 or 3% of the taxpayer's total income. Consult a certified National Board of Revenue (NBR) tax practitioner for personal tax filing.
+          <strong>Tax Credit Notice:</strong> Mutual fund tax rebate under Section 78 of the Income Tax Act 2023 (as
+          amended by Finance Act 2026) is calculated as 10% of eligible annual investment, subject to a maximum cap of
+          ৳7,50,000 or 3% of the taxpayer's total income. Consult a certified National Board of Revenue (NBR) tax
+          practitioner for personal tax filing.
         </p>
       </div>
 
@@ -1317,7 +1650,7 @@
   <!-- 10. JAVASCRIPT: EMBEDDED DATASET & APPLICATION LOGIC                      -->
   <!-- ========================================================================= -->
   <script>
-    (function() {
+    (function () {
       // -----------------------------------------------------------------------
       // A. MASTER EMBEDDED DATASET: 26+ ANALYZED FUNDS + 6 AVOID/FLAGGED FUNDS
       // -----------------------------------------------------------------------
@@ -2259,7 +2592,7 @@
 
       // Event listeners for Engine
       document.querySelectorAll(".horizon-btn").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
           document.querySelectorAll(".horizon-btn").forEach(b => {
             b.className = "horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600";
           });
@@ -2270,7 +2603,7 @@
       });
 
       document.querySelectorAll(".mandate-btn").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
           document.querySelectorAll(".mandate-btn").forEach(b => {
             b.className = "mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600";
           });
@@ -2281,7 +2614,7 @@
       });
 
       document.querySelectorAll(".risk-btn").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
           document.querySelectorAll(".risk-btn").forEach(b => {
             b.className = "risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600";
           });
@@ -2293,14 +2626,14 @@
 
       const budgetSlider = document.getElementById("engineBudgetSlider");
       const budgetDisplay = document.getElementById("engineBudgetDisplay");
-      budgetSlider.addEventListener("input", function() {
+      budgetSlider.addEventListener("input", function () {
         state.budget = parseInt(this.value, 10);
         budgetDisplay.textContent = `৳${state.budget.toLocaleString()} / mo`;
         computeMatch();
       });
 
       document.querySelectorAll(".budget-chip").forEach(chip => {
-        chip.addEventListener("click", function() {
+        chip.addEventListener("click", function () {
           const amt = parseInt(this.getAttribute("data-amt"), 10);
           budgetSlider.value = amt;
           state.budget = amt;
@@ -2366,7 +2699,7 @@
 
         const months = years * 12;
         const monthlyRate = annualRate / 12;
-        
+
         let fv = 0;
         if (monthlyRate > 0) {
           fv = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
@@ -2403,11 +2736,11 @@
         document.getElementById("calcRatioText").textContent = `${Math.round(principalPct)}% Principal • ${Math.round(profitPct)}% Growth`;
       }
 
-      calcMonthlySlider.addEventListener("input", function() {
+      calcMonthlySlider.addEventListener("input", function () {
         calcMonthlyInput.value = this.value;
         calculateWealth();
       });
-      calcMonthlyInput.addEventListener("input", function() {
+      calcMonthlyInput.addEventListener("input", function () {
         calcMonthlySlider.value = this.value;
         calculateWealth();
       });
@@ -2416,7 +2749,7 @@
       calcIncomeInput.addEventListener("input", calculateWealth);
 
       document.querySelectorAll(".calc-preset-amt").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
           const val = this.getAttribute("data-v");
           calcMonthlyInput.value = val;
           calcMonthlySlider.value = val;
@@ -2425,7 +2758,7 @@
       });
 
       document.querySelectorAll(".calc-preset-yr").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
           const y = this.getAttribute("data-y");
           calcYearsSlider.value = y;
           calculateWealth();
@@ -2433,7 +2766,7 @@
       });
 
       document.querySelectorAll(".calc-rate-preset").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
           const r = this.getAttribute("data-r");
           calcRateSlider.value = r;
           calculateWealth();
@@ -2561,7 +2894,7 @@
         }).join("");
       }
 
-      window.sortTable = function(column) {
+      window.sortTable = function (column) {
         if (currentSort.column === column) {
           currentSort.order = currentSort.order === "asc" ? "desc" : "asc";
         } else {
@@ -2581,7 +2914,7 @@
       const tableCollapseWrapper = document.getElementById("tableCollapseWrapper");
       let isTableCollapsed = false;
 
-      btnToggleTableCollapse.addEventListener("click", function() {
+      btnToggleTableCollapse.addEventListener("click", function () {
         isTableCollapsed = !isTableCollapsed;
         if (isTableCollapsed) {
           tableCollapseWrapper.classList.add("hidden");
@@ -2597,7 +2930,7 @@
       // -----------------------------------------------------------------------
       const modalBackdrop = document.getElementById("fundModalBackdrop");
 
-      window.openFundModal = function(fundId) {
+      window.openFundModal = function (fundId) {
         const fund = MASTER_FUNDS.find(f => f.id === fundId) || MASTER_FUNDS[0];
 
         document.getElementById("modalFundTitle").textContent = fund.name;
@@ -2623,12 +2956,12 @@
         modalBackdrop.classList.add("flex");
       };
 
-      window.closeFundModal = function() {
+      window.closeFundModal = function () {
         modalBackdrop.classList.add("hidden");
         modalBackdrop.classList.remove("flex");
       };
 
-      modalBackdrop.addEventListener("click", function(e) {
+      modalBackdrop.addEventListener("click", function (e) {
         if (e.target === modalBackdrop) closeFundModal();
       });
 
@@ -2651,7 +2984,7 @@
         themeIconLight.classList.remove("hidden");
       }
 
-      themeToggleBtn.addEventListener("click", function() {
+      themeToggleBtn.addEventListener("click", function () {
         const isDark = document.documentElement.classList.contains("dark");
         if (isDark) {
           document.documentElement.classList.remove("dark");
@@ -2677,4 +3010,5 @@
   </script>
 
 </body>
+
 </html>
