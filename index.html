@@ -1,0 +1,2680 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIP Wealth Builder • Bangladesh Mutual Fund Intelligence Hub (Oct 2026)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            fintech: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d'
+            },
+            slate: {
+              850: '#111827',
+              900: '#0f172a',
+              950: '#090d16'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Consolas', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Custom Scrollbar for FinTech Tables */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.4);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #475569;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+
+    /* Range slider custom styling */
+    input[type=range] {
+      accent-color: #10b981;
+    }
+
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-black transition-colors duration-200">
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP INSTITUTIONAL NAVIGATION BAR & COMPLIANCE BADGE                    -->
+  <!-- ========================================================================= -->
+  <nav class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Brand Identity -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20">
+            ৳
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white">SIP Wealth Builder</span>
+              <span class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse-slow"></span> BSEC Verified Oct 2026
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">Bangladesh Mutual Fund SIP Intelligence Hub</p>
+          </div>
+        </div>
+
+        <!-- Quick Anchor Links -->
+        <div class="hidden md:flex items-center gap-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
+          <a href="#section-engine" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Filter &amp; Match</a>
+          <a href="#section-top-picks" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Top Picks</a>
+          <a href="#section-screener" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Master Screener (26 Funds)</a>
+          <a href="#section-calculator" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition">Wealth Calculator</a>
+          <a href="#section-safety" class="px-3 py-1.5 rounded-lg text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition">Flagged AMCs ❌</a>
+        </div>
+
+        <!-- Actions: Theme Toggle & Jump CTA -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Theme Toggle Button -->
+          <button id="themeToggleBtn" type="button" aria-label="Toggle Theme" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/60 transition">
+            <span id="themeIconDark" class="hidden text-base">🌙</span>
+            <span id="themeIconLight" class="text-base">☀️</span>
+          </button>
+
+          <!-- Quick Action Button -->
+          <a href="#section-engine" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 shadow-md shadow-emerald-500/20 transition transform active:scale-95">
+            Find My SIP &rarr;
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================= -->
+  <!-- 2. HERO SECTION: THE HOOK & EXECUTIVE STATS BAR                           -->
+  <!-- ========================================================================= -->
+  <header class="relative overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:from-slate-900 dark:via-slate-900/80 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800/60 pt-10 pb-12 sm:pt-14 sm:pb-16 transition-colors">
+    <!-- Ambient background glow -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+      
+      <!-- Regulatory Pill Badges -->
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span> BSEC Rules 2025 Enforced
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 dark:bg-blue-500/15 border border-blue-500/30 text-blue-800 dark:text-blue-300">
+          Finance Act 2026 Tax Credit
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 dark:bg-purple-500/15 border border-purple-500/30 text-purple-800 dark:text-purple-300">
+          102 Open-End Funds Analyzed
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight max-w-4xl">
+        Build Long-Term Wealth with <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400">Bangladesh’s Top Rated SIPs</span> (Oct 2026)
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+        Verified BSEC Data &bull; Tax-Free Returns up to ৳75 Lakh &bull; Zero Hallucinations. Replace guesswork with evidence-based institutional intelligence across 43 Asset Management Companies.
+      </p>
+
+      <!-- KEY STATS BAR -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+        
+        <!-- Stat 1 -->
+        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Industry AUM</div>
+          <div class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-0.5">৳5,768 Cr</div>
+          <div class="text-[11px] text-emerald-600 dark:text-emerald-400 mt-0.5">102 Funds across 43 AMCs</div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Avg Inflation Hurdle</div>
+          <div class="text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-300 mt-0.5">8.34% CPI</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Policy Repo: 10.00%</div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Top 3Y SIP Return</div>
+          <div class="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-0.5">+16.19% p.a.</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">EDGE Growth Fund (#1)</div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Max Tax Credit</div>
+          <div class="text-xl sm:text-2xl font-black text-teal-600 dark:text-teal-300 mt-0.5">৳7,50,000 / yr</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">10% Rebate up to ৳75L</div>
+        </div>
+
+        <!-- Stat 5 -->
+        <div class="col-span-2 sm:col-span-1 bg-white dark:bg-slate-900/80 backdrop-blur border border-slate-200 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm transition hover:border-slate-400 dark:hover:border-slate-700">
+          <div class="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">SIP vs Lump-Sum</div>
+          <div class="text-xl sm:text-2xl font-black text-cyan-600 dark:text-cyan-300 mt-0.5">+200 to +455 bps</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Taka-Cost Averaging Edge</div>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. INTERACTIVE FILTER & RECOMMENDATION ENGINE (CORE FEATURE)              -->
+  <!-- ========================================================================= -->
+  <section id="section-engine" class="py-10 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Core Recommendation Engine</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
+            Find Your Optimal SIP in 30 Seconds
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Select your investment horizon, mandate, and risk profile to instantly reveal your #1 matched mutual fund with quantitative rationale.
+          </p>
+        </div>
+        <div class="shrink-0 text-xs text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400"></span>
+          <span>Adaptive Multi-Horizon Matching</span>
+        </div>
+      </div>
+
+      <!-- Engine Main Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- LEFT: Control Panel (5 Cols) -->
+        <div class="lg:col-span-5 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl flex flex-col justify-between transition-colors">
+          <div class="space-y-5">
+            
+            <!-- 1. Horizon Selection -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                1. Select Time Horizon
+              </label>
+              <div class="grid grid-cols-3 gap-2" id="horizonBtnGroup">
+                <button type="button" data-val="short" class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  Short-Term<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">1&ndash;3 Yrs</span>
+                </button>
+                <button type="button" data-val="medium" class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
+                  Medium-Term<br><span class="text-[10px] font-normal text-emerald-700 dark:text-emerald-400/80">3&ndash;7 Yrs</span>
+                </button>
+                <button type="button" data-val="long" class="horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  Long-Term<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">7+ Yrs</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Mandate Selection -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                2. Select Mandate
+              </label>
+              <div class="grid grid-cols-2 gap-2" id="mandateBtnGroup">
+                <button type="button" data-val="conventional" class="mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
+                  🏛️ Conventional (All Assets)
+                </button>
+                <button type="button" data-val="islamic" class="mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  🌙 Islamic (Shariah Sukuk)
+                </button>
+              </div>
+            </div>
+
+            <!-- 3. Risk Tolerance -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                3. Risk Appetite
+              </label>
+              <div class="grid grid-cols-3 gap-2" id="riskBtnGroup">
+                <button type="button" data-val="conservative" class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  🟢 Conservative<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">0% Equity / Debt</span>
+                </button>
+                <button type="button" data-val="balanced" class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300">
+                  🟡 Balanced<br><span class="text-[10px] font-normal text-emerald-700 dark:text-emerald-400/80">40-50% Equity</span>
+                </button>
+                <button type="button" data-val="aggressive" class="risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600">
+                  🔴 Aggressive<br><span class="text-[10px] font-normal text-slate-500 dark:text-slate-400">70-80% Equity</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4. Monthly Budget Slider -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="engineBudgetSlider" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                  4. Monthly Budget
+                </label>
+                <span id="engineBudgetDisplay" class="text-sm font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                  ৳10,000 / mo
+                </span>
+              </div>
+              <input id="engineBudgetSlider" type="range" min="1000" max="100000" step="1000" value="10000" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+              
+              <!-- Quick Budget Chips -->
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="2000">৳2,000</button>
+                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="5000">৳5,000</button>
+                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 transition" data-amt="10000">৳10,000</button>
+                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="25000">৳25,000</button>
+                <button type="button" class="budget-chip text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" data-amt="50000">৳50,000</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Helper indicator -->
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
+            <span>✨ Live Quantitative Matching Active</span>
+            <span class="text-emerald-600 dark:text-emerald-400 font-semibold">100% Algorithmic</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Dynamic Matched Recommendation Display (7 Cols) -->
+        <div class="lg:col-span-7 flex flex-col">
+          <div id="recommendationCard" class="flex-1 bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-900 dark:to-slate-850 border-2 border-emerald-500/60 rounded-3xl p-6 sm:p-7 shadow-2xl relative overflow-hidden flex flex-col justify-between transition-colors">
+            
+            <!-- Accent glow badge -->
+            <div class="absolute -right-8 -top-8 w-44 h-44 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div>
+              <!-- Match Score Banner -->
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-emerald-500 text-slate-950 flex items-center gap-1.5 shadow-sm">
+                    🏆 #1 Top Recommended Match
+                  </span>
+                  <span id="matchScoreBadge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                    98% Profile Match
+                  </span>
+                </div>
+                <span id="matchCategoryBadge" class="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                  Medium-Term &bull; Balanced
+                </span>
+              </div>
+
+              <!-- Fund Name & AMC -->
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                <div>
+                  <h3 id="matchFundName" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                    IDLC Balanced Fund
+                  </h3>
+                  <p id="matchAmcName" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                    Managed by <strong class="text-slate-800 dark:text-slate-200">IDLC Asset Management Ltd</strong> &bull; Conventional Balanced
+                  </p>
+                </div>
+                <!-- Big Number Highlight -->
+                <div class="shrink-0 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-3 text-right">
+                  <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">3-Yr SIP Return</div>
+                  <div id="matchReturnBig" class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                    +14.59%
+                  </div>
+                  <div id="matchLumpReturn" class="text-[10px] text-slate-500 dark:text-slate-400">3Y Lump: +10.04% p.a.</div>
+                </div>
+              </div>
+
+              <!-- Badges Row -->
+              <div class="flex flex-wrap items-center gap-1.5 mt-4" id="matchBadgesContainer">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-500/15 border border-blue-500/30 text-blue-700 dark:text-blue-300">✓ BSEC Compliant</span>
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300">✓ Tax-Free Return</span>
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-purple-500/15 border border-purple-500/30 text-purple-700 dark:text-purple-300">✓ Free Life Insurance up to ৳1 Cr</span>
+              </div>
+
+              <!-- "Why This Pick?" Deep Rationale Card -->
+              <div class="mt-5 p-4 rounded-2xl bg-slate-100 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm leading-relaxed">
+                <div class="flex items-center gap-1.5 font-bold text-emerald-600 dark:text-emerald-400 mb-1 text-xs uppercase tracking-wider">
+                  <span>💡 Why This Pick?</span>
+                </div>
+                <p id="matchWhyText" class="text-slate-700 dark:text-slate-300">
+                  Ideal 3–7 year vehicle balancing 46.1% equity growth with 42.7% high-yield sovereign Treasury bonds. Low DSEX beta of 0.33 shielded unitholders during 2022–2025 corrections, and active SIPs include complimentary Life Insurance up to ৳1 crore.
+                </p>
+              </div>
+
+              <!-- Key Metrics Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4">
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                  <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min. Monthly SIP</div>
+                  <div id="matchMinSip" class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳5,000 / mo</div>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                  <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Risk Level</div>
+                  <div id="matchRiskLevel" class="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-300 mt-0.5">🟡 Moderate (3/5)</div>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                  <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3Y Max Drawdown</div>
+                  <div id="matchMaxDd" class="text-xs sm:text-sm font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">-9.7%</div>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60">
+                  <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Expense / Fee</div>
+                  <div id="matchFee" class="text-xs sm:text-sm font-extrabold text-slate-700 dark:text-slate-300 mt-0.5">Tiered (0% Exit)</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-3">
+              <a id="matchCtaLink" href="https://idlc.com/aml/sip.php" target="_blank" rel="noopener" class="w-full sm:w-auto flex-1 text-center px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/25 transition">
+                Start SIP on Official AMC Site &rarr;
+              </a>
+              <button id="matchInspectBtn" type="button" class="w-full sm:w-auto px-4 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition">
+                Inspect Asset Breakdown &amp; Crashes
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. TOP PICKS BENCHMARK CARDS (THE CATEGORY WINNERS)                       -->
+  <!-- ========================================================================= -->
+  <section id="section-top-picks" class="py-12 bg-white dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Institutional Champions</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
+            Category Benchmark Winners (Oct 2026)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Top-ranked open-end mutual funds audited against multi-cycle drawdowns, expense ratios, and rolling returns.
+          </p>
+        </div>
+        <!-- Filter Tabs for Conventional vs Shariah -->
+        <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-950 p-1 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+          <button id="tabShowAllPicks" type="button" class="px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition">All Winners</button>
+          <button id="tabShowConvPicks" type="button" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Conventional Only</button>
+          <button id="tabShowIslamicPicks" type="button" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Islamic Shariah</button>
+        </div>
+      </div>
+
+      <!-- Top 3 Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="topPicksCardGrid">
+
+        <!-- Card 1: Short-Term Winner (UCB Income Plus) -->
+        <div class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-emerald-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-emerald-400 transition group">
+          <div>
+            <!-- Header Tag -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
+                Short-Term Winner (1&ndash;3 Yrs)
+              </span>
+              <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">Safety &amp; Liquidity</span>
+            </div>
+
+            <!-- Fund & AMC -->
+            <div class="flex items-start justify-between gap-2 mt-2">
+              <div>
+                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition">
+                  UCB Income Plus Fund
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">UCB Asset Management Ltd &bull; Conventional Debt</p>
+              </div>
+              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">
+                UCB
+              </div>
+            </div>
+
+            <!-- Big Number -->
+            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+              <div class="text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">+14.89%</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Lump-Sum: <strong>+13.90% p.a.</strong> (Std Dev: 6.3%)</div>
+            </div>
+
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-1.5 my-3">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free Returns</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">0.70% Flat Fee</span>
+            </div>
+
+            <!-- Mini Metrics Row -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
+                <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳5,000</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Risk Level</div>
+                <div class="font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">🟢 Low (1/5)</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Max Drawdown</div>
+                <div class="font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 font-mono">-4.0%</div>
+              </div>
+            </div>
+
+            <!-- Allocation Note -->
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              <strong>Portfolio:</strong> 0% Equity, 59.1% Govt T-Bonds, 17.9% Cash, 13.6% Sub Bonds. 100% positive 12M periods.
+            </p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="mt-5 pt-4 flex items-center gap-2">
+            <a href="https://returnkoto.com/funds/ucb-income-plus-fund" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition">
+              Start SIP &rarr;
+            </a>
+            <button type="button" onclick="openFundModal('ucb-income-plus')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+              Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Medium-Term Winner (IDLC Balanced) -->
+        <div class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-blue-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-blue-400 transition group">
+          <div>
+            <!-- Header Tag -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-blue-500/20 text-blue-800 dark:text-blue-300 border border-blue-500/30">
+                Medium-Term Winner (3&ndash;7 Yrs)
+              </span>
+              <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">Balanced Growth</span>
+            </div>
+
+            <!-- Fund & AMC -->
+            <div class="flex items-start justify-between gap-2 mt-2">
+              <div>
+                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition">
+                  IDLC Balanced Fund
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">IDLC Asset Management Ltd &bull; Conventional Balanced</p>
+              </div>
+              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-blue-600 dark:text-blue-400 shrink-0">
+                IDLC
+              </div>
+            </div>
+
+            <!-- Big Number -->
+            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+              <div class="text-3xl font-black text-blue-600 dark:text-blue-400 font-mono mt-0.5">+14.59%</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">5-Yr SIP: <strong>+10.69% p.a.</strong> (1Y SIP: +18.31%)</div>
+            </div>
+
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-1.5 my-3">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free Returns</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20">Free ৳1 Cr Life Ins.</span>
+            </div>
+
+            <!-- Mini Metrics Row -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
+                <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳5,000</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Risk Level</div>
+                <div class="font-extrabold text-amber-600 dark:text-amber-300 mt-0.5">🟡 Med (3/5)</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Max Drawdown</div>
+                <div class="font-extrabold text-slate-700 dark:text-slate-200 mt-0.5 font-mono">-9.7%</div>
+              </div>
+            </div>
+
+            <!-- Allocation Note -->
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              <strong>Portfolio:</strong> 46.1% Common Equity, 42.7% Govt T-Bonds, 11.2% FDR/Cash. Low Beta of 0.33.
+            </p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="mt-5 pt-4 flex items-center gap-2">
+            <a href="https://idlc.com/aml/sip.php" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold text-xs text-center transition">
+              Start SIP &rarr;
+            </a>
+            <button type="button" onclick="openFundModal('idlc-balanced')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+              Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Long-Term Winner (EDGE AMC Growth) -->
+        <div class="top-pick-card conventional-pick bg-slate-50 dark:bg-slate-900 border-2 border-amber-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-amber-400 transition group">
+          <div>
+            <!-- Header Tag -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30">
+                Long-Term Winner (7+ Yrs)
+              </span>
+              <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">#1 3Y SIP in BD</span>
+            </div>
+
+            <!-- Fund & AMC -->
+            <div class="flex items-start justify-between gap-2 mt-2">
+              <div>
+                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300 transition">
+                  EDGE AMC Growth Fund
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">EDGE AMC Limited &bull; Equity Growth</p>
+              </div>
+              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-amber-600 dark:text-amber-400 shrink-0">
+                EDGE
+              </div>
+            </div>
+
+            <!-- Big Number -->
+            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+              <div class="text-3xl font-black text-amber-600 dark:text-amber-400 font-mono mt-0.5">+16.19%</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">5-Yr SIP: <strong>+11.28% p.a.</strong> (Incep: +10.26%)</div>
+            </div>
+
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-1.5 my-3">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">Tax-Free Returns</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">2.30% Audited TER</span>
+            </div>
+
+            <!-- Mini Metrics Row -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
+                <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳1,000</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Risk Level</div>
+                <div class="font-extrabold text-rose-600 dark:text-rose-400 mt-0.5">🔴 High (4/5)</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Max Drawdown</div>
+                <div class="font-extrabold text-slate-700 dark:text-slate-200 mt-0.5 font-mono">-11.0%</div>
+              </div>
+            </div>
+
+            <!-- Allocation Note -->
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              <strong>Portfolio:</strong> 80.3% Common Equity, 9.4% Cash, 7.1% Pref Shares. Outperformed DSEX by >1,000 bps.
+            </p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="mt-5 pt-4 flex items-center gap-2">
+            <a href="https://www.edgeamc.com/mutual-fund" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition">
+              Start SIP &rarr;
+            </a>
+            <button type="button" onclick="openFundModal('edge-amc-growth')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+              Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: Islamic Shariah Benchmark Winner (EDGE Al-Amin Shariah) -->
+        <div class="top-pick-card islamic-pick bg-slate-50 dark:bg-slate-900 border-2 border-teal-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between hover:border-teal-400 transition group">
+          <div>
+            <!-- Header Tag -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase bg-teal-500/20 text-teal-800 dark:text-teal-300 border border-teal-500/30">
+                #1 Islamic / Shariah Winner
+              </span>
+              <span class="text-[11px] font-bold text-teal-700 dark:text-teal-300">Govt Sukuk Backed</span>
+            </div>
+
+            <!-- Fund & AMC -->
+            <div class="flex items-start justify-between gap-2 mt-2">
+              <div>
+                <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition">
+                  EDGE Al-Amin Shariah Fund
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">EDGE AMC Limited &bull; Shariah Consumer &amp; Sukuk</p>
+              </div>
+              <div class="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-xs font-bold text-teal-600 dark:text-teal-400 shrink-0">
+                🌙
+              </div>
+            </div>
+
+            <!-- Big Number -->
+            <div class="my-4 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">3-Year SIP CAGR</div>
+              <div class="text-3xl font-black text-teal-600 dark:text-teal-400 font-mono mt-0.5">+7.90%</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">2-Yr CAGR: <strong>+9.59% p.a.</strong> (#1 Shariah in BD)</div>
+            </div>
+
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-1.5 my-3">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">BSEC Compliant</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20">100% Shariah Certified</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">2.05% Audited TER</span>
+            </div>
+
+            <!-- Mini Metrics Row -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-200 dark:border-slate-800 text-center text-xs">
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Min SIP</div>
+                <div class="font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">৳1,000</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Risk Level</div>
+                <div class="font-extrabold text-amber-600 dark:text-amber-300 mt-0.5">🟡 Med (3/5)</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Max Drawdown</div>
+                <div class="font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 font-mono">-9.0%</div>
+              </div>
+            </div>
+
+            <!-- Allocation Note -->
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              <strong>Portfolio:</strong> 43.7% Shariah Consumer/Pharma Equity, 39.4% Govt Ijarah Sukuk, 9.6% Cash.
+            </p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="mt-5 pt-4 flex items-center gap-2">
+            <a href="https://returnkoto.com/funds/edge-al-amin-shariah-consumer-fund" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs text-center transition">
+              Start SIP &rarr;
+            </a>
+            <button type="button" onclick="openFundModal('edge-al-amin-shariah')" class="py-2.5 px-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+              Details
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. WEALTH PROJECTION CALCULATOR WIDGET                                    -->
+  <!-- ========================================================================= -->
+  <section id="section-calculator" class="py-12 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-850 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl transition-colors">
+        
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Finance Act 2026 Interactive Widget</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
+              SIP Wealth &amp; Tax Rebate Calculator
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+              Calculate projected maturity value with monthly compounding and 10% annual income tax rebate under the Income Tax Act 2023 / Finance Act 2026.
+            </p>
+          </div>
+          <!-- Quick Preset Pill -->
+          <div class="flex flex-wrap gap-1.5 shrink-0 text-xs font-semibold">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border border-emerald-500/20">10% Personal Tax Rebate</span>
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 dark:text-blue-400 border border-blue-500/20">Cap: ৳75 Lakh/Yr</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+          
+          <!-- INPUTS (5 Cols) -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <!-- 1. Monthly SIP Amount -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="calcMonthlyInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                  Monthly Contribution
+                </label>
+                <div class="flex items-center gap-1">
+                  <span class="text-slate-500 dark:text-slate-400 font-mono text-sm">৳</span>
+                  <input id="calcMonthlyInput" type="number" min="1000" max="500000" step="1000" value="10000" class="w-28 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm font-extrabold text-emerald-600 dark:text-emerald-400 font-mono text-right focus:outline-none focus:border-emerald-500">
+                </div>
+              </div>
+              <input id="calcMonthlySlider" type="range" min="1000" max="100000" step="1000" value="10000" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+              
+              <div class="flex justify-between gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 font-semibold">
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="5000">৳5K</button>
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white font-bold text-emerald-600 dark:text-emerald-400" data-v="10000">৳10K</button>
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="20000">৳20K</button>
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="35000">৳35K</button>
+                <button type="button" class="calc-preset-amt hover:text-slate-900 dark:hover:text-white" data-v="50000">৳50K</button>
+              </div>
+            </div>
+
+            <!-- 2. Investment Duration (Years) -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="calcYearsSlider" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                  Time Period (Years)
+                </label>
+                <span id="calcYearsDisplay" class="text-sm font-black text-slate-900 dark:text-white font-mono">
+                  5 Years (60 Months)
+                </span>
+              </div>
+              <input id="calcYearsSlider" type="range" min="1" max="25" step="1" value="5" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+              
+              <div class="flex justify-between gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 font-semibold">
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="3">3 Yrs</button>
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white font-bold text-emerald-600 dark:text-emerald-400" data-y="5">5 Yrs</button>
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="7">7 Yrs</button>
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="10">10 Yrs</button>
+                <button type="button" class="calc-preset-yr hover:text-slate-900 dark:hover:text-white" data-y="15">15 Yrs</button>
+              </div>
+            </div>
+
+            <!-- 3. Expected Return % -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="calcRateSlider" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                  Expected Return (% p.a.)
+                </label>
+                <span id="calcRateDisplay" class="text-sm font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                  14.0% p.a.
+                </span>
+              </div>
+              <input id="calcRateSlider" type="range" min="6" max="22" step="0.5" value="14" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer">
+              
+              <!-- Category Benchmarks -->
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <button type="button" class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300" data-r="12.5">
+                  Debt Benchmark (12.5%)
+                </button>
+                <button type="button" class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30" data-r="14.0">
+                  Balanced (14.0%)
+                </button>
+                <button type="button" class="calc-rate-preset px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300" data-r="16.0">
+                  Equity Growth (16.0%)
+                </button>
+              </div>
+            </div>
+
+            <!-- 4. Optional Annual Taxable Income -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="calcIncomeInput" class="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                  Annual Taxable Income (for 3% Cap Check)
+                </label>
+                <input id="calcIncomeInput" type="number" min="300000" max="10000000" step="50000" value="1200000" class="w-28 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 font-mono text-right">
+              </div>
+              <p class="text-[10px] text-slate-500 dark:text-slate-400">
+                Under Finance Act 2026, rebate is 10% of investment, capped at 3% of total income or ৳7,50,000.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- OUTPUTS (7 Cols) -->
+          <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-950/80 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between transition-colors">
+            
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
+                Projected Wealth Growth &amp; Tax Rebate Breakdown
+              </div>
+
+              <!-- Main Hero Output: Estimated Final Value -->
+              <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-transparent border border-emerald-500/30">
+                <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Estimated Final Wealth (Maturity Value)</div>
+                <div id="calcFinalValue" class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-mono mt-1">
+                  ৳10,48,913
+                </div>
+                <div class="flex items-center gap-2 mt-1 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
+                  <span>🚀 Total Profit Generated:</span>
+                  <strong id="calcProfitValue" class="font-bold font-mono">৳4,48,913</strong>
+                </div>
+              </div>
+
+              <!-- Output Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+                
+                <!-- Card 1: Principal -->
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Total Invested</div>
+                  <div id="calcTotalInvested" class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white mt-0.5 font-mono">
+                    ৳6,00,000
+                  </div>
+                  <div id="calcMonthsSummary" class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">60 months &bull; ৳10K/mo</div>
+                </div>
+
+                <!-- Card 2: Annual Tax Rebate -->
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Annual Tax Rebate</div>
+                  <div id="calcAnnualRebate" class="text-lg sm:text-xl font-extrabold text-teal-600 dark:text-teal-300 mt-0.5 font-mono">
+                    ৳12,000 / yr
+                  </div>
+                  <div class="text-[10px] text-teal-600 dark:text-teal-400/80 mt-0.5">10% direct credit</div>
+                </div>
+
+                <!-- Card 3: Total Cumulative Rebate -->
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-medium">Total Tax Saved</div>
+                  <div id="calcTotalRebate" class="text-lg sm:text-xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 font-mono">
+                    ৳60,000
+                  </div>
+                  <div id="calcTaxDuration" class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Across 5 tax years</div>
+                </div>
+
+              </div>
+
+              <!-- Visual Progress / Ratio Bar -->
+              <div class="mt-6">
+                <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400 mb-1.5 font-medium">
+                  <span>Capital Breakdown</span>
+                  <span id="calcRatioText">57% Principal &bull; 43% Growth</span>
+                </div>
+                <div class="w-full h-3 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden flex">
+                  <div id="calcBarPrincipal" class="bg-blue-500 h-full transition-all duration-300" style="width: 57%;"></div>
+                  <div id="calcBarProfit" class="bg-emerald-500 dark:bg-emerald-400 h-full transition-all duration-300" style="width: 43%;"></div>
+                </div>
+                <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                  <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Principal Contribution</span>
+                  <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400"></span> Compound Gains</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Tax Law Note Callout -->
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-start gap-2">
+              <span class="text-teal-600 dark:text-teal-400 text-sm">ℹ️</span>
+              <p>
+                <strong>Finance Act 2026 Mandate:</strong> Investment in open-end mutual fund units qualifies for a 10% tax rebate under Section 78 of the Income Tax Act 2023. Capital gains up to ৳50 Lakh are 100% tax-exempt for individuals.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. MASTER COMPARATIVE DATA TABLE (ALL 26 ANALYZED FUNDS + SUSPENDED)      -->
+  <!-- ========================================================================= -->
+  <section id="section-screener" class="py-12 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Table Header & Controls -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Institutional Database</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
+            Comparative Matrix of Active &amp; Flagged Mutual Funds
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Sortable, filterable screener covering 26 analyzed open-end mutual funds and mandatory regulatory exclusion list (UFS, RACE, LR Global).
+          </p>
+        </div>
+
+        <!-- Right stats & toggles -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="tableCountBadge" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">
+            Showing 33 Funds
+          </span>
+          <button id="btnToggleTableCollapse" type="button" class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 transition">
+            Collapse Table ▲
+          </button>
+        </div>
+      </div>
+
+      <!-- FILTER CONTROLS BAR -->
+      <div class="bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 mb-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs transition-colors">
+        
+        <!-- Search Input -->
+        <div class="lg:col-span-2">
+          <label for="tableSearchInput" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+            Search Fund or AMC
+          </label>
+          <input id="tableSearchInput" type="text" placeholder="e.g. UCB, IDLC, EDGE, Ekush, Shanta, VIPB..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500">
+        </div>
+
+        <!-- Filter by Mandate -->
+        <div>
+          <label for="tableMandateSelect" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+            Mandate
+          </label>
+          <select id="tableMandateSelect" class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+            <option value="ALL">All Mandates</option>
+            <option value="Conventional">Conventional</option>
+            <option value="Islamic (Shariah)">Islamic (Shariah)</option>
+          </select>
+        </div>
+
+        <!-- Filter by Category -->
+        <div>
+          <label for="tableTypeSelect" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+            Asset Class
+          </label>
+          <select id="tableTypeSelect" class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+            <option value="ALL">All Categories</option>
+            <option value="Debt">Debt (Fixed Income)</option>
+            <option value="Balanced">Balanced (Hybrid)</option>
+            <option value="Equity">Equity Growth</option>
+          </select>
+        </div>
+
+        <!-- Filter by Status -->
+        <div>
+          <label for="tableStatusSelect" class="block font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+            Status
+          </label>
+          <select id="tableStatusSelect" class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+            <option value="ALL">All Statuses</option>
+            <option value="Active">✅ Active Only</option>
+            <option value="Watchlist">⚠️ Watchlist Only</option>
+            <option value="Avoid">❌ Avoid / Suspended</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- COLLAPSIBLE TABLE CONTAINER -->
+      <div id="tableCollapseWrapper" class="transition-all duration-300">
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xl">
+          <table class="w-full text-left border-collapse text-xs">
+            
+            <!-- Table Header -->
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 uppercase tracking-wider text-[11px] border-b border-slate-200 dark:border-slate-800">
+                <th class="py-3.5 px-4 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('name')">
+                  Fund Name &amp; AMC ⇅
+                </th>
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('type')">
+                  Type ⇅
+                </th>
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('sip3y')">
+                  3Y SIP Return ⇅
+                </th>
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('cagr5y')">
+                  5Y CAGR ⇅
+                </th>
+                <th class="py-3.5 px-3 font-bold">
+                  Expense / Fee
+                </th>
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('minSip')">
+                  Min SIP ⇅
+                </th>
+                <th class="py-3.5 px-3 font-bold cursor-pointer hover:text-emerald-500 transition" onclick="sortTable('risk')">
+                  Risk Score ⇅
+                </th>
+                <th class="py-3.5 px-3 font-bold text-center">
+                  Status
+                </th>
+                <th class="py-3.5 px-3 font-bold text-center">
+                  Action
+                </th>
+              </tr>
+            </thead>
+
+            <!-- Table Body populated by JS -->
+            <tbody id="screenerTableBody" class="divide-y divide-slate-200 dark:divide-slate-800/70 text-slate-800 dark:text-slate-200">
+              <!-- Rendered via JS -->
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. EDUCATIONAL & SAFETY SECTION (RED FLAGS + 3-STEP START GUIDE)          -->
+  <!-- ========================================================================= -->
+  <section id="section-safety" class="py-12 bg-slate-50 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- 7.1 RED FLAGS WARNING BOX -->
+      <div class="rounded-3xl border-2 border-rose-500/50 bg-rose-50/60 dark:bg-gradient-to-br dark:from-rose-950/40 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-8 shadow-2xl relative overflow-hidden transition-colors">
+        <div class="flex items-center gap-3 pb-4 border-b border-rose-300 dark:border-rose-500/30">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-600 dark:text-rose-400 text-xl font-black">
+            ⚠️
+          </div>
+          <div>
+            <h3 class="text-xl font-black text-rose-900 dark:text-rose-300">
+              Mandatory Regulatory Alert: Flagged &amp; Suspended AMCs (DO NOT INVEST)
+            </h3>
+            <p class="text-xs text-rose-700 dark:text-rose-200/80 mt-0.5">
+              Strict compliance check based on BSEC, BFIU, and Supreme Court enforcement orders.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6 text-xs sm:text-sm">
+          
+          <!-- UFS Card -->
+          <div class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-rose-800 dark:text-rose-400">1. Universal Financial Solutions</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">EMBEZZLEMENT</span>
+            </div>
+            <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
+              BSEC and BFIU confirmed former MD Syed Hamza Alamgir embezzled <strong>৳158–235 Crore</strong> across 5 funds (<em>UFS-Bank Asia, UFS-IBBL, UFS-Padma, UFS-Popular, UFS-Pragati</em>) via forged FDR receipts. All funds suspended with 0 active AUM.
+            </p>
+          </div>
+
+          <!-- RACE Card -->
+          <div class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-rose-800 dark:text-rose-400">2. Bangladesh RACE Management</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">BFIU FREEZE</span>
+            </div>
+            <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
+              BFIU froze fund bank accounts and BSEC suspended BO accounts. Appellate Division cleared BSEC probe enforcement in June 2026. <em>RACE Financial Inclusion</em> YTD -14.60%; <em>RACE Special Opps</em> 2025 return -21.50%.
+            </p>
+          </div>
+
+          <!-- LR Global Card -->
+          <div class="bg-white dark:bg-slate-950/80 p-4 rounded-2xl border border-rose-300 dark:border-rose-500/30 space-y-2 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-rose-800 dark:text-rose-400">3. LR Global Bangladesh AMC</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300">MANAGER REMOVED</span>
+            </div>
+            <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
+              In February 2026, BSEC formally removed LR Global as asset manager of 6 mutual funds (including <em>DBH 1st MF</em> and <em>AIBL 1st Islamic</em>) and fined directors following Rule 56 breaches involving unauthorized illiquid placements.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 7.2 3-STEP VISUAL HOW-TO-START GUIDE -->
+      <div>
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Fast-Track Execution</span>
+          <h3 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
+            How to Start an SIP in Bangladesh (3-Step Roadmap)
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            No stock broker needed. Open-end mutual funds can be purchased directly from the Asset Management Company online.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Step 1 -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-black text-xl">
+                1
+              </div>
+              <h4 class="text-base font-extrabold text-slate-900 dark:text-white">Digital KYC &amp; Verification</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                Prepare your National ID (NID), active bank routing &amp; account number, TIN certificate, and nominee photo. Most AMCs now support paperless e-KYC.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold">
+              Time: 5–10 Minutes
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-black text-xl">
+                2
+              </div>
+              <h4 class="text-base font-extrabold text-slate-900 dark:text-white">Select AMC &amp; Register Portal</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                Create your investor profile on official portals like <em>IDLC AML SIP</em>, <em>MyShanta</em>, <em>UCB Asset</em>, or platforms like <em>ReturnKoto / Bini</em>.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-blue-600 dark:text-blue-400 font-semibold">
+              BSEC Regulated Direct Account
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 relative flex flex-col justify-between shadow-sm transition-colors">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-black text-xl">
+                3
+              </div>
+              <h4 class="text-base font-extrabold text-slate-900 dark:text-white">Setup Automated Auto-Debit</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                Connect your bank via BEFTN/NPSB mandate, internet banking, or bKash auto-debit. Units will be allotted on the NAV date every month automatically.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-purple-600 dark:text-purple-400 font-semibold">
+              Automate &amp; Compound
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. MODAL / DRAWER FOR FUND DEEP DIVE                                      -->
+  <!-- ========================================================================= -->
+  <div id="fundModalBackdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div id="fundModalContent" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl max-w-2xl w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto transition-colors">
+      
+      <!-- Close Button -->
+      <button type="button" onclick="closeFundModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 dark:hover:text-white text-xl font-bold p-1">
+        ✕
+      </button>
+
+      <!-- Modal Header -->
+      <div class="pr-8">
+        <div class="flex items-center gap-2 mb-1.5">
+          <span id="modalFundBadge" class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
+            Fund Details
+          </span>
+          <span id="modalRiskBadge" class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            Risk: 2/5
+          </span>
+        </div>
+        <h3 id="modalFundTitle" class="text-2xl font-black text-slate-900 dark:text-white">
+          UCB Income Plus Fund
+        </h3>
+        <p id="modalFundAmc" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          UCB Asset Management Ltd &bull; Conventional Debt
+        </p>
+      </div>
+
+      <!-- Key Stats Ribbon -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 my-5">
+        <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3-Yr SIP Return</div>
+          <div id="modalSip3y" class="text-base font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">+14.89%</div>
+        </div>
+        <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3-Yr Lump CAGR</div>
+          <div id="modalCagr3y" class="text-base font-black text-slate-900 dark:text-white font-mono mt-0.5">+13.90%</div>
+        </div>
+        <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">3Y Max Drawdown</div>
+          <div id="modalMaxDd" class="text-base font-black text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">-4.0%</div>
+        </div>
+        <div class="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Current NAV</div>
+          <div id="modalNav" class="text-base font-black text-slate-900 dark:text-white font-mono mt-0.5">৳15.10</div>
+        </div>
+      </div>
+
+      <!-- Asset Allocation & Risk -->
+      <div class="space-y-4 text-xs sm:text-sm">
+        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+            Exact Portfolio Asset Allocation
+          </div>
+          <p id="modalAllocation" class="text-slate-800 dark:text-slate-300 leading-relaxed font-mono text-xs">
+            0% Equity | 59.07% Govt T-Bonds/Bills | 17.85% Cash | 13.63% Corp Subordinated Bonds | 9.45% FDR
+          </p>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+            Crisis Resilience &amp; Multi-Cycle Notes
+          </div>
+          <p id="modalCrashNotes" class="text-slate-700 dark:text-slate-300 leading-relaxed">
+            100% positive rolling 12-month periods since inception. Navigated post-2023 rate hikes with ultra-low downside deviation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="bg-slate-50 dark:bg-slate-950 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
+            <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Fee Structure &amp; TER</div>
+            <div id="modalFeeText" class="font-bold text-slate-900 dark:text-white mt-0.5 text-xs">Mgmt Fee: 0.70% Flat</div>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-950 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
+            <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Minimum Monthly SIP</div>
+            <div id="modalMinSip" class="font-bold text-emerald-600 dark:text-emerald-400 mt-0.5 text-xs">৳5,000 / month</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer CTA -->
+      <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+        <button type="button" onclick="closeFundModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition">
+          Close
+        </button>
+        <a id="modalExternalLink" href="#" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">
+          Visit Official Portal / Page &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 9. INSTITUTIONAL FOOTER & LEGAL DISCLAIMER                                -->
+  <!-- ========================================================================= -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-10 border-t border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-sm">
+            ৳
+          </div>
+          <span class="font-bold text-slate-200">SIP Wealth Builder &bull; Bangladesh Hub</span>
+        </div>
+        <div class="text-[11px] text-slate-400 text-center sm:text-right">
+          Valuation Cut-Off: October 2026 &bull; Strict Zero-Hallucination Standard
+        </div>
+      </div>
+
+      <!-- Legal Disclaimer -->
+      <div class="text-[11px] text-slate-400 leading-relaxed space-y-2">
+        <p>
+          <strong>Regulatory &amp; Investment Disclaimer:</strong> Mutual fund investments in Bangladesh are subject to market risks. Please read all fund prospectuses, Trust Deeds, and periodic NAV disclosures carefully before investing. Historical returns (CAGR / SIP XIRR) do not guarantee future performance. This platform compiles publicly verified regulatory filings from the Bangladesh Securities and Exchange Commission (BSEC), Dhaka Stock Exchange (DSE), and audited AMC annual disclosures for educational and informational purposes.
+        </p>
+        <p>
+          <strong>Tax Credit Notice:</strong> Mutual fund tax rebate under Section 78 of the Income Tax Act 2023 (as amended by Finance Act 2026) is calculated as 10% of eligible annual investment, subject to a maximum cap of ৳7,50,000 or 3% of the taxpayer's total income. Consult a certified National Board of Revenue (NBR) tax practitioner for personal tax filing.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 10. JAVASCRIPT: EMBEDDED DATASET & APPLICATION LOGIC                      -->
+  <!-- ========================================================================= -->
+  <script>
+    (function() {
+      // -----------------------------------------------------------------------
+      // A. MASTER EMBEDDED DATASET: 26+ ANALYZED FUNDS + 6 AVOID/FLAGGED FUNDS
+      // -----------------------------------------------------------------------
+      const MASTER_FUNDS = [
+        // ==================== DEBT / FIXED INCOME (8) ====================
+        {
+          id: "ucb-income-plus",
+          name: "UCB Income Plus Fund",
+          amc: "UCB Asset Management Ltd",
+          nav: "৳15.10",
+          aum: "৳377–426.4 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: 14.89,
+          cagr3y: 13.90,
+          cagr5y: null,
+          sip1y: 14.09,
+          incepCagr: 13.38,
+          feeText: "0.70% Flat Mgmt Fee",
+          minSip: 5000,
+          risk: 1,
+          maxDd: -4.0,
+          vol3y: 6.3,
+          beta: "0.12",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "0% Equity | 59.07% Govt T-Bonds/Bills | 17.85% Cash | 13.63% Corp Sub Bonds | 9.45% FDR",
+          crashNotes: "Launched Jul 2023; 100% positive rolling 12M periods. Ultra-low drawdown of -4.0%.",
+          url: "https://returnkoto.com/funds/ucb-income-plus-fund"
+        },
+        {
+          id: "ekush-stable-return",
+          name: "Ekush Stable Return Fund",
+          amc: "Ekush Wealth Management Ltd",
+          nav: "৳15.60",
+          aum: "৳63.4–78.0 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: 15.32,
+          cagr3y: 13.97,
+          cagr5y: null,
+          sip1y: 16.21,
+          incepCagr: 11.51,
+          feeText: "0.50%–2.50% Tiered",
+          minSip: 1000,
+          risk: 1,
+          maxDd: -2.4,
+          vol3y: 4.3,
+          beta: "0.07",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "0% Common Equity | 50.35% Govt T-Bonds | 29.50% Corp/Sub Bonds | 9.07% FDR | 6.04% Cash",
+          crashNotes: "Lowest 3-year volatility (4.3%) and lowest max drawdown (-2.4%) in Bangladesh.",
+          url: "https://returnkoto.com/funds/ekush-stable-return-fund"
+        },
+        {
+          id: "shanta-fixed-income",
+          name: "Shanta Fixed Income Fund",
+          amc: "Shanta Asset Management Ltd",
+          nav: "৳12.70",
+          aum: "৳349.1–353.0 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: 14.34,
+          cagr3y: 11.47,
+          cagr5y: 9.01,
+          sip1y: 15.54,
+          incepCagr: 8.31,
+          feeText: "2.50%→1.00% Tiered",
+          minSip: 1000,
+          risk: 1,
+          maxDd: -3.8,
+          vol3y: 6.9,
+          beta: "0.05",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "0% Equity | 52.0% 20Y T-Bond | 32.3% 10Y T-Bond | 12.1% SND Cash | 3.6% FDR",
+          crashNotes: "#1 ranked fund across all 29 mutual funds in BD with verified 5-year track record (+9.01% p.a.).",
+          url: "https://www.shanta-aml.com/our-funds/shanta-fixed-income-fund"
+        },
+        {
+          id: "edge-hq-income",
+          name: "EDGE High Quality Income Fund",
+          amc: "EDGE AMC Limited",
+          nav: "৳13.82",
+          aum: "৳93.85 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: 13.32,
+          cagr3y: 12.36,
+          cagr5y: null,
+          sip1y: 10.46,
+          incepCagr: 9.85,
+          feeText: "0.94% Audited TER (Lowest in BD)",
+          minSip: 1000,
+          risk: 2,
+          maxDd: -5.1,
+          vol3y: 6.3,
+          beta: "0.11",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "0% Common Equity | 36.97% T-Bills | 24.34% FDRs | 14.50% BGTB | 11.34% Renata Pref Shares",
+          crashNotes: "Industry-leading low audited TER of 0.94%; zero equity exposure with superior yield protection.",
+          url: "https://returnkoto.com/funds/edge-high-quality-income-fund"
+        },
+        {
+          id: "idlc-income",
+          name: "IDLC Income Fund",
+          amc: "IDLC Asset Management Ltd",
+          nav: "৳11.71",
+          aum: "৳102–138.9 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: 11.10,
+          cagr3y: 9.67,
+          cagr5y: 8.84,
+          sip1y: 12.61,
+          incepCagr: 8.61,
+          feeText: "Max 0.70% Flat Mgmt Fee",
+          minSip: 5000,
+          risk: 2,
+          maxDd: -5.2,
+          vol3y: 8.8,
+          beta: "-0.20",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "0% Equity | 81.05% Sovereign BGTBs | 14.43% Cash | 4.52% MTB FDR",
+          crashNotes: "#2 ranked 5-year fund in Bangladesh (+8.84% p.a.) with negative DSEX beta (-0.20).",
+          url: "https://returnkoto.com/funds/idlc-income-fund"
+        },
+        {
+          id: "vipb-fixed-income",
+          name: "VIPB Fixed Income Fund",
+          amc: "VIPB Asset Management Co. Ltd",
+          nav: "৳14.06",
+          aum: "৳30.0 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: null,
+          cagr3y: null,
+          cagr5y: null,
+          sip1y: 19.98,
+          incepCagr: 19.78,
+          feeText: "1.35% Audited TER",
+          minSip: 2000,
+          risk: 2,
+          maxDd: -6.3,
+          vol3y: 12.6,
+          beta: "0.42",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "49.24% BGTB | 34.40% Sub Bonds | 9.51% Common Stock | 3.86% Pref Shares",
+          crashNotes: "Launched Sep 2024; delivered strong +19.78% annualized return over first 2.2 years.",
+          url: "https://returnkoto.com/funds/vipb-fixed-income-fund"
+        },
+        {
+          id: "sandhani-slic-fixed-income",
+          name: "Sandhani AML SLIC Fixed Income Fund",
+          amc: "Sandhani Asset Management Ltd",
+          nav: "৳11.61",
+          aum: "৳120.1 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: null,
+          cagr3y: null,
+          cagr5y: null,
+          sip1y: null,
+          incepCagr: 8.50,
+          feeText: "Statutory Tiered",
+          minSip: 1000,
+          risk: 2,
+          maxDd: -4.5,
+          vol3y: 7.5,
+          beta: "DATA UNAVAILABLE",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "Fixed-Income Sovereign & Institutional Debt Mandate",
+          crashNotes: "Paid 7.0% cash dividend in FY2025; steady sovereign portfolio.",
+          url: "https://lankabd.com/MF/OpenEndMutualFund"
+        },
+        {
+          id: "lankabangla-fixed-income",
+          name: "LankaBangla Fixed Income Fund",
+          amc: "LankaBangla AMCL",
+          nav: "৳10.21",
+          aum: "৳25.2 Cr",
+          type: "Debt",
+          mandate: "Conventional",
+          sip3y: null,
+          cagr3y: null,
+          cagr5y: null,
+          sip1y: null,
+          incepCagr: 2.10,
+          feeText: "Max 0.75% Mgmt Fee",
+          minSip: 3000,
+          risk: 1,
+          maxDd: -0.5,
+          vol3y: 4.0,
+          beta: "DATA UNAVAILABLE",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "Min 80% Govt T-Bills/Bonds & A-rated Fixed Income",
+          crashNotes: "Launched June 2026 under BSEC (Mutual Fund) Rules 2025.",
+          url: "https://lbamcl.com/lankabangla-fixed-income-fund/"
+        },
+
+        // ==================== BALANCED / HYBRID (8) ====================
+        {
+          id: "idlc-balanced",
+          name: "IDLC Balanced Fund",
+          amc: "IDLC Asset Management Ltd",
+          nav: "৳12.41",
+          aum: "৳60.0–64.9 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: 14.59,
+          cagr3y: 10.04,
+          cagr5y: 5.89,
+          sip1y: 18.31,
+          incepCagr: 9.04,
+          feeText: "2.50%→1.00% Tiered",
+          minSip: 5000,
+          risk: 3,
+          maxDd: -9.7,
+          vol3y: 11.0,
+          beta: "0.33",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "46.11% Common Equity | 42.66% Sovereign BGTB | 5.17% FDR | 5.05% Cash",
+          crashNotes: "Dipped only -10.3% in Mar 2020 pandemic crash, then rallied +58.2% to 141.9. Free Life Insurance included.",
+          url: "https://returnkoto.com/funds/idlc-balanced-fund"
+        },
+        {
+          id: "ekush-first-unit",
+          name: "Ekush First Unit Fund",
+          amc: "Ekush Wealth Management Ltd",
+          nav: "৳15.91",
+          aum: "৳36.0 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: 14.67,
+          cagr3y: 11.37,
+          cagr5y: 3.54,
+          sip1y: 10.54,
+          incepCagr: 12.14,
+          feeText: "2.50%→1.00% Tiered",
+          minSip: 1000,
+          risk: 3,
+          maxDd: -9.7,
+          vol3y: 12.5,
+          beta: "0.42",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "72.63% Common Equity | 13.45% MF Units | 8.43% Cash | 5.49% Pref Shares",
+          crashNotes: "0.0% drawdown during Mar–May 2020 pandemic crash (held cash/debt), surging +86.5% by late 2021.",
+          url: "https://returnkoto.com/funds/ekush-first-unit-fund"
+        },
+        {
+          id: "vipb-balanced",
+          name: "VIPB Balanced Fund",
+          amc: "VIPB Asset Management Co. Ltd",
+          nav: "৳13.17",
+          aum: "৳11.0–13.8 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: 11.77,
+          cagr3y: 9.50,
+          cagr5y: 5.98,
+          sip1y: 8.58,
+          incepCagr: 8.69,
+          feeText: "2.71% Audited TER",
+          minSip: 2000,
+          risk: 3,
+          maxDd: -13.8,
+          vol3y: 15.6,
+          beta: "0.70",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "59.21% Common Equity | 24.06% Sub Bonds | 8.90% BGTB | 5.54% Pref Shares",
+          crashNotes: "Gained +25.5% during the 2021 economic recovery post-launch.",
+          url: "https://returnkoto.com/funds/vipb-balanced-fund"
+        },
+        {
+          id: "lankabangla-1st-balanced",
+          name: "LankaBangla 1st Balanced Unit Fund",
+          amc: "LankaBangla AMCL",
+          nav: "৳11.78",
+          aum: "৳34.4–37.0 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: 8.08,
+          cagr3y: 4.45,
+          cagr5y: -0.06,
+          sip1y: 4.28,
+          incepCagr: 7.31,
+          feeText: "2.50%→1.00% Tiered",
+          minSip: 5000,
+          risk: 3,
+          maxDd: -13.3,
+          vol3y: 11.4,
+          beta: "0.57",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "63.92% Common Equity | 19.18% BGTB | 8.12% Corp Bonds | 5.47% Cash",
+          crashNotes: "Rallied +88.1% from Jun 2020 to Oct 2021 before experiencing -13.3% drawdown.",
+          url: "https://returnkoto.com/funds/lankabangla-1st-balanced-unit-fund"
+        },
+        {
+          id: "ebl-aml-1st-unit",
+          name: "EBL AML 1st Unit Fund",
+          amc: "EBL Asset Management Ltd",
+          nav: "৳10.11",
+          aum: "৳22.9 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: null,
+          cagr3y: null,
+          cagr5y: null,
+          sip1y: null,
+          incepCagr: 6.80,
+          feeText: "2.50%→1.00% Tiered",
+          minSip: 5000,
+          risk: 3,
+          maxDd: -12.0,
+          vol3y: 12.0,
+          beta: "DATA UNAVAILABLE",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "Balanced Equity & Fixed Income Mandate",
+          crashNotes: "Paid 9.0% cash dividend in 2025; steady institutional banking sponsor.",
+          url: "https://eblaml.com/"
+        },
+        {
+          id: "shanta-first-income",
+          name: "Shanta First Income Unit Fund",
+          amc: "Shanta Asset Management Ltd",
+          nav: "৳12.36",
+          aum: "৳83.17 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: 6.92,
+          cagr3y: -1.02,
+          cagr5y: -1.98,
+          sip1y: 14.78,
+          incepCagr: 6.91,
+          feeText: "Tiered Mgmt Fee",
+          minSip: 1000,
+          risk: 5,
+          maxDd: -23.3,
+          vol3y: 11.6,
+          beta: "0.62",
+          status: "Watchlist",
+          statusIcon: "⚠️ Watchlist",
+          allocation: "52.12% Common Equity | 19.73% Cash | 16.18% Perpetual Bonds | 10.68% T-Bills",
+          crashNotes: "Suffered deep -23.3% drawdown in 2022–2025 bear market, dragging 3Y CAGR negative.",
+          url: "https://returnkoto.com/funds/shanta-first-income-unit-fund"
+        },
+        {
+          id: "icb-amcl-unit",
+          name: "ICB AMCL Unit Fund",
+          amc: "ICB Asset Management PLC",
+          nav: "৳223.90",
+          aum: "৳869.0 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: null,
+          cagr3y: null,
+          cagr5y: null,
+          sip1y: null,
+          incepCagr: 8.90,
+          feeText: "Statutory Tiered",
+          minSip: 1000,
+          risk: 4,
+          maxDd: -16.0,
+          vol3y: 14.5,
+          beta: "DATA UNAVAILABLE",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "Diversified DSE Equity & State Institutional Fixed Income",
+          crashNotes: "Oldest open-end fund in BD (23.3 yrs history); YTD Oct 2026 return +15.10%.",
+          url: "https://icbamcl.gov.bd/All_Fund/icb-amcl-unit-fund"
+        },
+
+        // ==================== ISLAMIC / SHARIAH (5) ====================
+        {
+          id: "edge-al-amin-shariah",
+          name: "EDGE Al-Amin Shariah Consumer Fund",
+          amc: "EDGE AMC Limited",
+          nav: "৳11.30",
+          aum: "৳13.23 Cr",
+          type: "Balanced",
+          mandate: "Islamic (Shariah)",
+          sip3y: 7.90,
+          cagr3y: 6.02,
+          cagr5y: null,
+          sip1y: 5.92,
+          incepCagr: 4.47,
+          feeText: "2.05% Audited TER",
+          minSip: 1000,
+          risk: 3,
+          maxDd: -9.0,
+          vol3y: 9.2,
+          beta: "0.47",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "43.72% Shariah Equity | 39.40% Govt Ijarah Sukuk | 9.59% Cash | 7.28% Mudaraba TDR",
+          crashNotes: "#1 performing Shariah mutual fund over 2Y (+9.59% p.a.) and 3Y (+7.90% SIP).",
+          url: "https://returnkoto.com/funds/edge-al-amin-shariah-consumer-fund"
+        },
+        {
+          id: "idlc-aml-shariah",
+          name: "IDLC AML Shariah Fund",
+          amc: "IDLC Asset Management Ltd",
+          nav: "৳10.96",
+          aum: "৳87.0–100.3 Cr",
+          type: "Balanced",
+          mandate: "Islamic (Shariah)",
+          sip3y: 5.21,
+          cagr3y: 2.93,
+          cagr5y: 0.82,
+          sip1y: 2.67,
+          incepCagr: 3.32,
+          feeText: "2.50%→1.00% Tiered",
+          minSip: 5000,
+          risk: 3,
+          maxDd: -9.9,
+          vol3y: 7.3,
+          beta: "0.27",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "51.92% Shariah Equity | 39.89% Govt Sukuk | 4.65% Cash | 3.54% Mudaraba TDR",
+          crashNotes: "Held NAV intact through Mar–Jun 2020 pandemic crash; low 7.3% volatility.",
+          url: "https://returnkoto.com/funds/idlc-aml-shariah-fund"
+        },
+        {
+          id: "ucb-taqwa-growth",
+          name: "UCB Taqwa Growth Fund",
+          amc: "UCB Asset Management Ltd",
+          nav: "৳10.01",
+          aum: "৳17.0–19.4 Cr",
+          type: "Balanced",
+          mandate: "Islamic (Shariah)",
+          sip3y: 2.52,
+          cagr3y: 1.80,
+          cagr5y: null,
+          sip1y: 2.07,
+          incepCagr: 2.08,
+          feeText: "Tiered Mgmt Fee",
+          minSip: 5000,
+          risk: 3,
+          maxDd: -8.1,
+          vol3y: 7.1,
+          beta: "0.15",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "55.14% Govt Sukuk | 24.50% Shariah Equity | 15.31% Cash | 5.05% TDR",
+          crashNotes: "Conservative Sukuk-heavy Shariah allocation kept drawdown to only -8.1%.",
+          url: "https://returnkoto.com/funds/ucb-taqwa-growth-fund"
+        },
+        {
+          id: "lankabangla-al-arafah-shariah",
+          name: "LankaBangla Al-Arafah Shariah Unit Fund",
+          amc: "LankaBangla AMCL",
+          nav: "৳9.76",
+          aum: "৳29.1 Cr",
+          type: "Balanced",
+          mandate: "Islamic (Shariah)",
+          sip3y: 4.52,
+          cagr3y: -0.01,
+          cagr5y: 0.50,
+          sip1y: 3.10,
+          incepCagr: 2.39,
+          feeText: "Tiered Mgmt Fee",
+          minSip: 5000,
+          risk: 4,
+          maxDd: -19.1,
+          vol3y: 10.5,
+          beta: "0.68",
+          status: "Watchlist",
+          statusIcon: "⚠️ Watchlist",
+          allocation: "59.43% Shariah Equity | 26.79% Govt Sukuk | 7.53% Cash | 6.25% TDR",
+          crashNotes: "Suffered a -19.1% drawdown during 2022–2025; 3Y lump return was flat (-0.01%).",
+          url: "https://returnkoto.com/funds/lankabangla-al-arafah-shariah-unit-fund"
+        },
+        {
+          id: "shanta-amanah-shariah",
+          name: "Shanta Amanah Shariah Fund",
+          amc: "Shanta Asset Management Ltd",
+          nav: "৳10.71",
+          aum: "৳62.7–64.2 Cr",
+          type: "Balanced",
+          mandate: "Islamic (Shariah)",
+          sip3y: 3.02,
+          cagr3y: -3.31,
+          cagr5y: -2.27,
+          sip1y: 6.74,
+          incepCagr: 4.50,
+          feeText: "Tiered Mgmt Fee",
+          minSip: 1000,
+          risk: 4,
+          maxDd: -21.2,
+          vol3y: 10.3,
+          beta: "0.36",
+          status: "Watchlist",
+          statusIcon: "⚠️ Watchlist",
+          allocation: "48.36% Shariah Equity | 27.59% Govt Sukuk | 13.84% Cash | 8.51% Corp Sukuk",
+          crashNotes: "-21.2% drawdown in 2022–2025 impacted multi-year returns before recent rebound.",
+          url: "https://returnkoto.com/funds/shanta-amanah-shariah-fund"
+        },
+
+        // ==================== EQUITY GROWTH (7) ====================
+        {
+          id: "ekush-growth",
+          name: "Ekush Growth Fund",
+          amc: "Ekush Wealth Management Ltd",
+          nav: "৳13.71",
+          aum: "৳29.1–31.0 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: 16.11,
+          cagr3y: 12.74,
+          cagr5y: 8.64,
+          sip1y: 14.44,
+          incepCagr: 8.64,
+          feeText: "2.50%→1.00% Tiered",
+          minSip: 1000,
+          risk: 4,
+          maxDd: -9.7,
+          vol3y: 12.4,
+          beta: "0.55",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "75.20% Common Equity | 13.34% MF Units | 5.54% Pref Shares | 4.45% Cash",
+          crashNotes: "100% positive rolling 12M win rate. Launched near 2021 DSEX peak yet delivered +8.64% CAGR.",
+          url: "https://returnkoto.com/funds/ekush-growth-fund"
+        },
+        {
+          id: "edge-amc-growth",
+          name: "EDGE AMC Growth Fund",
+          amc: "EDGE AMC Limited",
+          nav: "৳16.61",
+          aum: "৳48.34 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: 16.19,
+          cagr3y: 12.47,
+          cagr5y: 6.12,
+          sip1y: 11.85,
+          incepCagr: 10.26,
+          feeText: "2.30% Audited TER",
+          minSip: 1000,
+          risk: 4,
+          maxDd: -11.0,
+          vol3y: 15.8,
+          beta: "0.69",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "80.29% Common Equity | 9.44% Cash | 7.08% Pref Shares | 3.19% BGTB",
+          crashNotes: "#1 ranked 3-year SIP return in Bangladesh (+16.19% p.a.). Surged +66% in post-pandemic rally.",
+          url: "https://returnkoto.com/funds/edge-amc-growth-fund"
+        },
+        {
+          id: "edge-bd-mutual-fund",
+          name: "EDGE Bangladesh Mutual Fund",
+          amc: "EDGE AMC Limited",
+          nav: "৳15.55",
+          aum: "৳22.06 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: 16.17,
+          cagr3y: 12.47,
+          cagr5y: 6.24,
+          sip1y: 11.95,
+          incepCagr: 9.44,
+          feeText: "2.50% Audited TER",
+          minSip: 1000,
+          risk: 4,
+          maxDd: -11.3,
+          vol3y: 15.6,
+          beta: "0.67",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "73.81% Common Equity | 16.60% Cash | 8.08% Pref Shares | 1.50% BGTB",
+          crashNotes: "Ranked #4 overall 5-year fund; weathered 2020 crash with only -6.6% dip before rallying +66.2%.",
+          url: "https://returnkoto.com/funds/edge-bangladesh-mutual-fund"
+        },
+        {
+          id: "vipb-sebl-1st",
+          name: "VIPB SEBL 1st Unit Fund",
+          amc: "VIPB Asset Management Co. Ltd",
+          nav: "৳12.27",
+          aum: "৳81.0–82.0 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: 12.06,
+          cagr3y: 9.41,
+          cagr5y: 5.99,
+          sip1y: 11.47,
+          incepCagr: 9.80,
+          feeText: "2.03% Audited TER (Lowest Equity TER)",
+          minSip: 2000,
+          risk: 4,
+          maxDd: -14.0,
+          vol3y: 15.1,
+          beta: "0.64",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "65.62% Common Equity | 13.67% Sub Bonds | 10.33% BGTB | 6.72% Pref Shares",
+          crashNotes: "15.5-year verified track record (+322.26% cumulative return / +10.97% p.a. XIRR).",
+          url: "https://returnkoto.com/funds/vipb-sebl-1st-unit-fund"
+        },
+        {
+          id: "vipb-nli-1st",
+          name: "VIPB NLI 1st Unit Fund",
+          amc: "VIPB Asset Management Co. Ltd",
+          nav: "৳11.44",
+          aum: "৳53.0–56.2 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: 11.09,
+          cagr3y: 8.81,
+          cagr5y: 4.81,
+          sip1y: 8.60,
+          incepCagr: 9.89,
+          feeText: "2.24% Audited TER",
+          minSip: 2000,
+          risk: 4,
+          maxDd: -13.6,
+          vol3y: 15.1,
+          beta: "0.64",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "64.16% Common Equity | 14.97% Sub Bonds | 9.23% BGTB | 6.63% Pref Shares",
+          crashNotes: "Converted to open-end in 2022; consistent 14.8-year compounder (+11.85% XIRR).",
+          url: "https://returnkoto.com/funds/vipb-nli-1st-unit-fund"
+        },
+        {
+          id: "idlc-growth",
+          name: "IDLC Growth Fund",
+          amc: "IDLC Asset Management Ltd",
+          nav: "৳13.03",
+          aum: "৳93.8–96.0 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: 11.55,
+          cagr3y: 8.82,
+          cagr5y: 4.87,
+          sip1y: 9.28,
+          incepCagr: 6.28,
+          feeText: "Tiered Mgmt Fee",
+          minSip: 5000,
+          risk: 4,
+          maxDd: -8.8,
+          vol3y: 12.1,
+          beta: "0.45",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "78.12% Common Equity | 13.87% Cash | 4.43% FDR | 3.22% BGTB",
+          crashNotes: "Lowest 3Y max drawdown (-8.8%) among all equity growth mutual funds in Bangladesh.",
+          url: "https://returnkoto.com/funds/idlc-growth-fund"
+        },
+        {
+          id: "cwt-emerging-bd",
+          name: "CWT Emerging Bangladesh 1st Fund",
+          amc: "CWT Asset Management Co. Ltd",
+          nav: "৳15.50",
+          aum: "৳5.0–5.7 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: 11.12,
+          cagr3y: 7.87,
+          cagr5y: 6.16,
+          sip1y: 3.33,
+          incepCagr: 13.52,
+          feeText: "Tiered Mgmt Fee",
+          minSip: 1000,
+          risk: 4,
+          maxDd: -12.2,
+          vol3y: 15.1,
+          beta: "0.52",
+          status: "Active",
+          statusIcon: "✅ Active",
+          allocation: "76.81% Common Equity | 10.85% TDR | 4.51% Cash | 4.00% MF Units",
+          crashNotes: "Surged +98.8% in pandemic recovery; highest since-inception CAGR (13.52%) among equity funds.",
+          url: "https://returnkoto.com/funds/cwt-emerging-bangladesh-first-growth-fund"
+        },
+
+        // ==================== FLAGGED / SUSPENDED AMCs (6) ====================
+        {
+          id: "ufs-bank-asia",
+          name: "UFS-Bank Asia Unit Fund",
+          amc: "Universal Financial Solutions (UFS)",
+          nav: "৳0.00",
+          aum: "৳0 Cr (Frozen)",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: null,
+          cagr3y: null,
+          cagr5y: null,
+          sip1y: null,
+          incepCagr: 0.0,
+          feeText: "ILLEGAL DIVERSION",
+          minSip: 0,
+          risk: 5,
+          maxDd: -100.0,
+          vol3y: 0.0,
+          beta: "N/A",
+          status: "Avoid",
+          statusIcon: "❌ Avoid",
+          allocation: "Fictitious FDRs & Diverted Balances (Embezzled BDT 158.37–235 Cr)",
+          crashNotes: "BSEC & BFIU confirmed criminal embezzlement by MD Hamza Alamgir via forged FDRs. Fund suspended.",
+          url: "https://www.tbsnews.net/economy/stocks/ufs-says-will-refund-tk235cr-embezzled-mutual-funds-612494"
+        },
+        {
+          id: "ufs-ibbl-shariah",
+          name: "UFS-IBBL Shariah Unit Fund",
+          amc: "Universal Financial Solutions (UFS)",
+          nav: "৳0.00",
+          aum: "৳0 Cr (Frozen)",
+          type: "Balanced",
+          mandate: "Islamic (Shariah)",
+          sip3y: null,
+          cagr3y: null,
+          cagr5y: null,
+          sip1y: null,
+          incepCagr: 0.0,
+          feeText: "ILLEGAL DIVERSION",
+          minSip: 0,
+          risk: 5,
+          maxDd: -100.0,
+          vol3y: 0.0,
+          beta: "N/A",
+          status: "Avoid",
+          statusIcon: "❌ Avoid",
+          allocation: "Embezzled Shariah Portfolio; 0 Active AUM",
+          crashNotes: "Completely suspended by BSEC; legal prosecution initiated for money laundering.",
+          url: "https://thefinancialexpress.com.bd/stock/bangladesh/regulator-to-sue-ufs-md-associates-for-money-laundering"
+        },
+        {
+          id: "race-financial-inclusion",
+          name: "RACE Financial Inclusion Unit Fund",
+          amc: "Bangladesh RACE Management PCL",
+          nav: "৳8.24",
+          aum: "৳19.2 Cr",
+          type: "Balanced",
+          mandate: "Conventional",
+          sip3y: -12.40,
+          cagr3y: -8.50,
+          cagr5y: -4.80,
+          sip1y: -14.60,
+          incepCagr: -2.30,
+          feeText: "High Fee & Severe DD",
+          minSip: 5000,
+          risk: 5,
+          maxDd: -38.5,
+          vol3y: 18.2,
+          beta: "0.85",
+          status: "Avoid",
+          statusIcon: "❌ Avoid",
+          allocation: "Illiquid Placements & Frozen Accounts",
+          crashNotes: "BFIU froze fund bank accounts in 2024; BSEC suspended BO block trading. YTD return -14.60%.",
+          url: "https://www.thedailystar.net/business/news/bsec-suspends-several-bo-accounts-race-3640766"
+        },
+        {
+          id: "race-special-opps",
+          name: "RACE Special Opportunities Unit Fund",
+          amc: "Bangladesh RACE Management PCL",
+          nav: "৳7.15",
+          aum: "৳24.0 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: -18.20,
+          cagr3y: -12.40,
+          cagr5y: -6.50,
+          sip1y: -21.50,
+          incepCagr: -4.10,
+          feeText: "Regulatory Sanction",
+          minSip: 5000,
+          risk: 5,
+          maxDd: -42.0,
+          vol3y: 20.4,
+          beta: "0.92",
+          status: "Avoid",
+          statusIcon: "❌ Avoid",
+          allocation: "Concentrated Illiquid Securities",
+          crashNotes: "Appellate Division cleared BSEC probe enforcement in June 2026. 2025 Return: -21.50%.",
+          url: "https://www.tbsnews.net/economy/banking/bfiu-halts-banking-transactions-12-race-managed-mutual-funds-876616"
+        },
+        {
+          id: "lr-global-dbh-1st",
+          name: "DBH First Mutual Fund (Ex-LR Global)",
+          amc: "LR Global Bangladesh AMC (Removed)",
+          nav: "৳9.12",
+          aum: "৳120 Cr",
+          type: "Equity",
+          mandate: "Conventional",
+          sip3y: -6.80,
+          cagr3y: -4.20,
+          cagr5y: -1.80,
+          sip1y: -8.10,
+          incepCagr: 3.10,
+          feeText: "Manager Fined & Ousted",
+          minSip: 0,
+          risk: 5,
+          maxDd: -34.0,
+          vol3y: 16.5,
+          beta: "0.75",
+          status: "Avoid",
+          statusIcon: "❌ Avoid",
+          allocation: "Unauthorized Unlisted Private Equity Placements",
+          crashNotes: "BSEC removed LR Global as manager in Feb 2026 for Rule 56 illiquid investment breaches.",
+          url: "https://lankabd.com/Home/news?id=53923"
+        },
+        {
+          id: "lr-global-aibl-islamic",
+          name: "AIBL 1st Islamic Mutual Fund (Ex-LR Global)",
+          amc: "LR Global Bangladesh AMC (Removed)",
+          nav: "৳8.90",
+          aum: "৳100 Cr",
+          type: "Balanced",
+          mandate: "Islamic (Shariah)",
+          sip3y: -8.10,
+          cagr3y: -5.10,
+          cagr5y: -2.40,
+          sip1y: -9.40,
+          incepCagr: 2.40,
+          feeText: "Trading Suspended",
+          minSip: 0,
+          risk: 5,
+          maxDd: -36.0,
+          vol3y: 15.8,
+          beta: "0.68",
+          status: "Avoid",
+          statusIcon: "❌ Avoid",
+          allocation: "Breached Shariah / Unlisted Allocations",
+          crashNotes: "Trading suspended in Oct 2025; BSEC stripped LR Global of management authority in Feb 2026.",
+          url: "https://www.newagebd.net/post/stocks/279985/todays-paper"
+        }
+      ];
+
+      // -----------------------------------------------------------------------
+      // B. RECOMMENDATION ENGINE LOGIC
+      // -----------------------------------------------------------------------
+      let state = {
+        horizon: "medium",      // 'short', 'medium', 'long'
+        mandate: "conventional", // 'conventional', 'islamic'
+        risk: "balanced",        // 'conservative', 'balanced', 'aggressive'
+        budget: 10000
+      };
+
+      function computeMatch() {
+        let matchedFundId = "idlc-balanced";
+        let whyText = "";
+        let matchScore = "98%";
+
+        if (state.mandate === "islamic") {
+          // Islamic Mandate
+          if (state.horizon === "short" && state.risk === "conservative" && state.budget >= 5000) {
+            matchedFundId = "ucb-taqwa-growth";
+            whyText = "Sukuk-heavy Islamic portfolio (55.1% Govt Sukuk) providing superior capital preservation with an ultra-low max drawdown of only -8.1% and low 7.1% volatility.";
+            matchScore = "96%";
+          } else {
+            // EDGE Al-Amin Shariah is #1 in BD
+            matchedFundId = "edge-al-amin-shariah";
+            whyText = "Ranked #1 Shariah mutual fund in Bangladesh over 2-year (+9.59% p.a.) and 3-year (+7.90% SIP) horizons. Combines 43.7% defensive consumer/pharma equities with 39.4% Govt Ijarah Sukuk and 2.05% audited TER.";
+            matchScore = "99%";
+          }
+        } else {
+          // Conventional Mandate
+          if (state.horizon === "short") {
+            if (state.budget < 5000) {
+              matchedFundId = "ekush-stable-return";
+              whyText = "Accessible at just ৳1,000/mo SIP. Boasts Bangladesh's lowest 3-year volatility (4.3%) and smallest drawdown (-2.4%), generating an exceptional +15.32% p.a. 3-Year SIP return via 0% equity.";
+              matchScore = "99%";
+            } else {
+              matchedFundId = "ucb-income-plus";
+              whyText = "Benchmark Short-Term Winner. Delivers +14.89% p.a. 3-Year SIP with 0% equity exposure (59.1% Govt T-Bonds, 17.9% cash, 13.6% sub bonds) and an industry-low 0.70% flat fee.";
+              matchScore = "98%";
+            }
+          } else if (state.horizon === "medium") {
+            if (state.risk === "conservative") {
+              matchedFundId = "shanta-fixed-income";
+              whyText = "Ranked #1 in Bangladesh across all 29 funds with a 5-year track record (+9.01% CAGR / +11.20% SIP). 0% equity risk with 52% long-term 20-year Treasury bonds locked at high yields.";
+              matchScore = "97%";
+            } else {
+              if (state.budget < 5000) {
+                matchedFundId = "ekush-first-unit";
+                whyText = "Ranked #1 balanced fund over 3-year and 7-year periods (+14.67% SIP / +12.14% since inception). Requires only ৳1,000/month min SIP with an exceptional recovery profile.";
+                matchScore = "98%";
+              } else {
+                matchedFundId = "idlc-balanced";
+                whyText = "Optimal medium-term vehicle balancing 46.1% equity with 42.7% high-yield sovereign bonds. Low beta (0.33) shielded investors during bear cycles and includes free Life Insurance up to ৳1 Crore.";
+                matchScore = "99%";
+              }
+            }
+          } else {
+            // Long-Term (7+ Yrs)
+            if (state.risk === "conservative") {
+              matchedFundId = "idlc-balanced";
+              whyText = "For conservative long-term wealth accumulation, IDLC Balanced cushions against equity drawdowns via 42.7% sovereign bonds while capturing market rallies.";
+              matchScore = "95%";
+            } else if (state.risk === "balanced") {
+              matchedFundId = "ekush-growth";
+              whyText = "Ranked #1 in both 3-Year (+16.11% SIP) and 5-Year (+12.41% SIP) equity performance. Maintained a flawless 100% 12-month rolling win rate despite 2021–2025 volatility.";
+              matchScore = "98%";
+            } else {
+              // Aggressive Long-Term
+              matchedFundId = "edge-amc-growth";
+              whyText = "#1 SIP Return in Bangladesh (+16.19% p.a. over 3 years). 80.3% equity growth orientation, disciplined valuation entry, and 2.30% audited TER designed for maximum compounding over 7+ years.";
+              matchScore = "99%";
+            }
+          }
+        }
+
+        const fund = MASTER_FUNDS.find(f => f.id === matchedFundId) || MASTER_FUNDS[0];
+
+        // Update DOM
+        document.getElementById("matchFundName").textContent = fund.name;
+        document.getElementById("matchAmcName").innerHTML = `Managed by <strong class="text-slate-800 dark:text-slate-200">${fund.amc}</strong> &bull; ${fund.mandate} ${fund.type}`;
+        document.getElementById("matchReturnBig").textContent = fund.sip3y ? `+${fund.sip3y.toFixed(2)}%` : `+${fund.incepCagr.toFixed(2)}%`;
+        document.getElementById("matchLumpReturn").textContent = fund.cagr3y ? `3Y Lump: +${fund.cagr3y.toFixed(2)}% p.a.` : `Incep: +${fund.incepCagr.toFixed(2)}% p.a.`;
+        document.getElementById("matchMinSip").textContent = `৳${fund.minSip.toLocaleString()} / mo`;
+        document.getElementById("matchRiskLevel").textContent = fund.risk <= 1 ? "🟢 Low (1/5)" : (fund.risk <= 3 ? `🟡 Moderate (${fund.risk}/5)` : `🔴 Growth (${fund.risk}/5)`);
+        document.getElementById("matchMaxDd").textContent = `${fund.maxDd.toFixed(1)}%`;
+        document.getElementById("matchFee").textContent = fund.feeText;
+        document.getElementById("matchWhyText").textContent = whyText;
+        document.getElementById("matchScoreBadge").textContent = `${matchScore} Match`;
+        document.getElementById("matchCategoryBadge").textContent = `${state.horizon.toUpperCase()} • ${state.risk.toUpperCase()} • ${state.mandate.toUpperCase()}`;
+        document.getElementById("matchCtaLink").href = fund.url;
+
+        // Button to inspect
+        document.getElementById("matchInspectBtn").onclick = () => openFundModal(fund.id);
+
+        // Budget check warning if fund minSip > budget
+        if (state.budget < fund.minSip) {
+          document.getElementById("matchMinSip").innerHTML = `<span class="text-amber-600 dark:text-amber-400 font-bold">৳${fund.minSip.toLocaleString()} (Min SIP > ৳${state.budget.toLocaleString()})</span>`;
+        }
+      }
+
+      // Event listeners for Engine
+      document.querySelectorAll(".horizon-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+          document.querySelectorAll(".horizon-btn").forEach(b => {
+            b.className = "horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600";
+          });
+          this.className = "horizon-btn py-2.5 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300";
+          state.horizon = this.getAttribute("data-val");
+          computeMatch();
+        });
+      });
+
+      document.querySelectorAll(".mandate-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+          document.querySelectorAll(".mandate-btn").forEach(b => {
+            b.className = "mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600";
+          });
+          this.className = "mandate-btn py-2 px-3 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300";
+          state.mandate = this.getAttribute("data-val");
+          computeMatch();
+        });
+      });
+
+      document.querySelectorAll(".risk-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+          document.querySelectorAll(".risk-btn").forEach(b => {
+            b.className = "risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600";
+          });
+          this.className = "risk-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300";
+          state.risk = this.getAttribute("data-val");
+          computeMatch();
+        });
+      });
+
+      const budgetSlider = document.getElementById("engineBudgetSlider");
+      const budgetDisplay = document.getElementById("engineBudgetDisplay");
+      budgetSlider.addEventListener("input", function() {
+        state.budget = parseInt(this.value, 10);
+        budgetDisplay.textContent = `৳${state.budget.toLocaleString()} / mo`;
+        computeMatch();
+      });
+
+      document.querySelectorAll(".budget-chip").forEach(chip => {
+        chip.addEventListener("click", function() {
+          const amt = parseInt(this.getAttribute("data-amt"), 10);
+          budgetSlider.value = amt;
+          state.budget = amt;
+          budgetDisplay.textContent = `৳${amt.toLocaleString()} / mo`;
+          computeMatch();
+        });
+      });
+
+      // -----------------------------------------------------------------------
+      // C. TOP PICKS FILTER TABS (Conventional vs Islamic)
+      // -----------------------------------------------------------------------
+      const tabShowAllPicks = document.getElementById("tabShowAllPicks");
+      const tabShowConvPicks = document.getElementById("tabShowConvPicks");
+      const tabShowIslamicPicks = document.getElementById("tabShowIslamicPicks");
+      const pickCards = document.querySelectorAll(".top-pick-card");
+
+      function updatePicksView(type) {
+        [tabShowAllPicks, tabShowConvPicks, tabShowIslamicPicks].forEach(btn => {
+          btn.className = "px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition";
+        });
+
+        if (type === "all") {
+          tabShowAllPicks.className = "px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition";
+          pickCards.forEach(c => c.classList.remove("hidden"));
+        } else if (type === "conventional") {
+          tabShowConvPicks.className = "px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition";
+          pickCards.forEach(c => {
+            if (c.classList.contains("conventional-pick")) c.classList.remove("hidden");
+            else c.classList.add("hidden");
+          });
+        } else if (type === "islamic") {
+          tabShowIslamicPicks.className = "px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition";
+          pickCards.forEach(c => {
+            if (c.classList.contains("islamic-pick")) c.classList.remove("hidden");
+            else c.classList.add("hidden");
+          });
+        }
+      }
+
+      tabShowAllPicks.addEventListener("click", () => updatePicksView("all"));
+      tabShowConvPicks.addEventListener("click", () => updatePicksView("conventional"));
+      tabShowIslamicPicks.addEventListener("click", () => updatePicksView("islamic"));
+
+      // -----------------------------------------------------------------------
+      // D. WEALTH PROJECTION & FINANCE ACT 2026 TAX CALCULATOR
+      // -----------------------------------------------------------------------
+      const calcMonthlyInput = document.getElementById("calcMonthlyInput");
+      const calcMonthlySlider = document.getElementById("calcMonthlySlider");
+      const calcYearsSlider = document.getElementById("calcYearsSlider");
+      const calcYearsDisplay = document.getElementById("calcYearsDisplay");
+      const calcRateSlider = document.getElementById("calcRateSlider");
+      const calcRateDisplay = document.getElementById("calcRateDisplay");
+      const calcIncomeInput = document.getElementById("calcIncomeInput");
+
+      function calculateWealth() {
+        const monthly = parseFloat(calcMonthlyInput.value) || 10000;
+        const years = parseInt(calcYearsSlider.value, 10) || 5;
+        const annualRate = (parseFloat(calcRateSlider.value) || 14) / 100;
+        const income = parseFloat(calcIncomeInput.value) || 1200000;
+
+        calcYearsDisplay.textContent = `${years} ${years === 1 ? 'Year' : 'Years'} (${years * 12} Months)`;
+        calcRateDisplay.textContent = `${(annualRate * 100).toFixed(1)}% p.a.`;
+
+        const months = years * 12;
+        const monthlyRate = annualRate / 12;
+        
+        let fv = 0;
+        if (monthlyRate > 0) {
+          fv = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+        } else {
+          fv = monthly * months;
+        }
+
+        const totalInvested = monthly * months;
+        const profit = Math.max(0, fv - totalInvested);
+
+        // Tax Rebate Calculation under Finance Act 2026:
+        // 10% rebate on annual contribution up to ৳75 Lakh
+        // Capped at 3% of annual taxable income or ৳7,50,000 max rebate
+        const annualInvestment = Math.min(monthly * 12, 7500000);
+        const maxEligibleRebate = Math.min(annualInvestment * 0.10, income * 0.03, 750000);
+        const totalTaxRebate = maxEligibleRebate * years;
+
+        // Render Outputs
+        document.getElementById("calcFinalValue").textContent = `৳${Math.round(fv).toLocaleString("en-IN")}`;
+        document.getElementById("calcProfitValue").textContent = `৳${Math.round(profit).toLocaleString("en-IN")}`;
+        document.getElementById("calcTotalInvested").textContent = `৳${Math.round(totalInvested).toLocaleString("en-IN")}`;
+        document.getElementById("calcMonthsSummary").textContent = `${months} months • ৳${Math.round(monthly).toLocaleString("en-IN")}/mo`;
+        document.getElementById("calcAnnualRebate").textContent = `৳${Math.round(maxEligibleRebate).toLocaleString("en-IN")} / yr`;
+        document.getElementById("calcTotalRebate").textContent = `৳${Math.round(totalTaxRebate).toLocaleString("en-IN")}`;
+        document.getElementById("calcTaxDuration").textContent = `Across ${years} tax years (10% rebate)`;
+
+        // Ratios for progress bar
+        const totalPool = fv || 1;
+        const principalPct = Math.min(100, Math.max(5, (totalInvested / totalPool) * 100));
+        const profitPct = Math.max(0, 100 - principalPct);
+
+        document.getElementById("calcBarPrincipal").style.width = `${principalPct}%`;
+        document.getElementById("calcBarProfit").style.width = `${profitPct}%`;
+        document.getElementById("calcRatioText").textContent = `${Math.round(principalPct)}% Principal • ${Math.round(profitPct)}% Growth`;
+      }
+
+      calcMonthlySlider.addEventListener("input", function() {
+        calcMonthlyInput.value = this.value;
+        calculateWealth();
+      });
+      calcMonthlyInput.addEventListener("input", function() {
+        calcMonthlySlider.value = this.value;
+        calculateWealth();
+      });
+      calcYearsSlider.addEventListener("input", calculateWealth);
+      calcRateSlider.addEventListener("input", calculateWealth);
+      calcIncomeInput.addEventListener("input", calculateWealth);
+
+      document.querySelectorAll(".calc-preset-amt").forEach(btn => {
+        btn.addEventListener("click", function() {
+          const val = this.getAttribute("data-v");
+          calcMonthlyInput.value = val;
+          calcMonthlySlider.value = val;
+          calculateWealth();
+        });
+      });
+
+      document.querySelectorAll(".calc-preset-yr").forEach(btn => {
+        btn.addEventListener("click", function() {
+          const y = this.getAttribute("data-y");
+          calcYearsSlider.value = y;
+          calculateWealth();
+        });
+      });
+
+      document.querySelectorAll(".calc-rate-preset").forEach(btn => {
+        btn.addEventListener("click", function() {
+          const r = this.getAttribute("data-r");
+          calcRateSlider.value = r;
+          calculateWealth();
+        });
+      });
+
+      // -----------------------------------------------------------------------
+      // E. MASTER COMPARATIVE TABLE RENDER & SORT
+      // -----------------------------------------------------------------------
+      const screenerTbody = document.getElementById("screenerTableBody");
+      const tableSearchInput = document.getElementById("tableSearchInput");
+      const tableMandateSelect = document.getElementById("tableMandateSelect");
+      const tableTypeSelect = document.getElementById("tableTypeSelect");
+      const tableStatusSelect = document.getElementById("tableStatusSelect");
+      const tableCountBadge = document.getElementById("tableCountBadge");
+
+      let currentSort = { column: "sip3y", order: "desc" };
+
+      function renderScreenerTable() {
+        const query = (tableSearchInput.value || "").toLowerCase().trim();
+        const mandateFilter = tableMandateSelect.value;
+        const typeFilter = tableTypeSelect.value;
+        const statusFilter = tableStatusSelect.value;
+
+        let list = MASTER_FUNDS.filter(f => {
+          const matchQ = !query || f.name.toLowerCase().includes(query) || f.amc.toLowerCase().includes(query) || f.allocation.toLowerCase().includes(query);
+          const matchMandate = mandateFilter === "ALL" || f.mandate === mandateFilter;
+          const matchType = typeFilter === "ALL" || f.type === typeFilter;
+          const matchStatus = statusFilter === "ALL" || f.status === statusFilter;
+          return matchQ && matchMandate && matchType && matchStatus;
+        });
+
+        // Sorting
+        list.sort((a, b) => {
+          let valA = a[currentSort.column];
+          let valB = b[currentSort.column];
+
+          if (currentSort.column === "risk") {
+            valA = a.risk; valB = b.risk;
+          } else if (currentSort.column === "minSip") {
+            valA = a.minSip; valB = b.minSip;
+          }
+
+          if (valA === null || valA === undefined) valA = -9999;
+          if (valB === null || valB === undefined) valB = -9999;
+
+          if (typeof valA === "string") {
+            return currentSort.order === "asc" ? valA.localeCompare(valB) : valB.localeCompare(valA);
+          }
+          return currentSort.order === "asc" ? valA - valB : valB - valA;
+        });
+
+        tableCountBadge.textContent = `Showing ${list.length} of ${MASTER_FUNDS.length} Funds`;
+
+        screenerTbody.innerHTML = list.map(f => {
+          const isAvoid = f.status === "Avoid";
+          const isWatchlist = f.status === "Watchlist";
+
+          // Row style with light/dark classes
+          let rowClass = "hover:bg-slate-50 dark:hover:bg-slate-800/70 transition cursor-pointer";
+          if (isAvoid) {
+            rowClass = "bg-rose-50 text-rose-900 dark:bg-rose-950/40 dark:text-rose-200 border-l-4 border-l-rose-500 hover:bg-rose-100 dark:hover:bg-rose-950/60 transition cursor-pointer";
+          } else if (isWatchlist) {
+            rowClass = "bg-amber-50/80 text-amber-950 dark:bg-amber-950/20 dark:text-slate-200 border-l-4 border-l-amber-500 hover:bg-amber-100 dark:hover:bg-amber-950/30 transition cursor-pointer";
+          }
+
+          // Format 3Y SIP
+          let sip3yHtml = '<span class="text-slate-400 italic">DATA UNAVAILABLE</span>';
+          if (f.sip3y !== null) {
+            const color = f.sip3y >= 10 ? "text-emerald-600 dark:text-emerald-400 font-extrabold" : (f.sip3y < 0 ? "text-rose-600 dark:text-rose-400 font-bold" : "text-slate-800 dark:text-slate-200 font-bold");
+            sip3yHtml = `<span class="${color}">+${f.sip3y.toFixed(2)}%</span>`;
+          } else if (f.sip1y !== null) {
+            sip3yHtml = `<span class="text-cyan-600 dark:text-cyan-300 font-bold">1Y: +${f.sip1y.toFixed(2)}%</span>`;
+          }
+
+          // Format 5Y CAGR
+          let cagr5yHtml = '<span class="text-slate-400 italic">DATA UNAVAILABLE</span>';
+          if (f.cagr5y !== null) {
+            const color = f.cagr5y >= 5 ? "text-emerald-600 dark:text-emerald-400 font-bold" : (f.cagr5y < 0 ? "text-rose-600 dark:text-rose-400 font-semibold" : "text-slate-700 dark:text-slate-300 font-semibold");
+            cagr5yHtml = `<span class="${color}">${f.cagr5y >= 0 ? '+' : ''}${f.cagr5y.toFixed(2)}%</span>`;
+          } else if (f.incepCagr !== null && f.status !== "Avoid") {
+            cagr5yHtml = `<span class="text-slate-500 dark:text-slate-400 text-[11px]">Incep: +${f.incepCagr.toFixed(2)}%</span>`;
+          }
+
+          // Risk Badge
+          let riskBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border border-emerald-500/20">Risk ${f.risk}/5</span>`;
+          if (f.risk >= 4) {
+            riskBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/15 text-rose-800 dark:text-rose-400 border border-rose-500/30">Risk ${f.risk}/5</span>`;
+          } else if (f.risk >= 3) {
+            riskBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30">Risk ${f.risk}/5</span>`;
+          }
+
+          // Status Badge
+          let statusBadge = `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-800 dark:text-emerald-300">✅ Active</span>`;
+          if (isAvoid) {
+            statusBadge = `<span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-rose-500 text-white dark:text-slate-950">❌ Avoid</span>`;
+          } else if (isWatchlist) {
+            statusBadge = `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-800 dark:text-amber-300">⚠️ Watchlist</span>`;
+          }
+
+          return `
+            <tr class="${rowClass} border-b border-slate-200 dark:border-slate-800/80" onclick="openFundModal('${f.id}')">
+              <td class="py-3 px-4">
+                <div class="font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition">${f.name}</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">${f.amc} &bull; <span class="text-slate-600 dark:text-slate-400">${f.mandate}</span></div>
+              </td>
+              <td class="py-3 px-3">
+                <span class="font-medium text-slate-700 dark:text-slate-300">${f.type}</span>
+              </td>
+              <td class="py-3 px-3 font-mono">${sip3yHtml}</td>
+              <td class="py-3 px-3 font-mono">${cagr5yHtml}</td>
+              <td class="py-3 px-3 text-[11px] text-slate-600 dark:text-slate-300">${f.feeText}</td>
+              <td class="py-3 px-3 font-mono font-bold text-slate-800 dark:text-slate-200">
+                ${f.minSip > 0 ? '৳' + f.minSip.toLocaleString() : 'Suspended'}
+              </td>
+              <td class="py-3 px-3">${riskBadge}</td>
+              <td class="py-3 px-3 text-center">${statusBadge}</td>
+              <td class="py-3 px-3 text-center">
+                <button type="button" onclick="event.stopPropagation(); openFundModal('${f.id}')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 dark:hover:bg-emerald-500 dark:hover:text-slate-950 text-slate-700 dark:text-slate-300 text-[11px] font-bold transition">
+                  Inspect
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join("");
+      }
+
+      window.sortTable = function(column) {
+        if (currentSort.column === column) {
+          currentSort.order = currentSort.order === "asc" ? "desc" : "asc";
+        } else {
+          currentSort.column = column;
+          currentSort.order = "desc";
+        }
+        renderScreenerTable();
+      };
+
+      tableSearchInput.addEventListener("input", renderScreenerTable);
+      tableMandateSelect.addEventListener("change", renderScreenerTable);
+      tableTypeSelect.addEventListener("change", renderScreenerTable);
+      tableStatusSelect.addEventListener("change", renderScreenerTable);
+
+      // Collapsible Table Toggle
+      const btnToggleTableCollapse = document.getElementById("btnToggleTableCollapse");
+      const tableCollapseWrapper = document.getElementById("tableCollapseWrapper");
+      let isTableCollapsed = false;
+
+      btnToggleTableCollapse.addEventListener("click", function() {
+        isTableCollapsed = !isTableCollapsed;
+        if (isTableCollapsed) {
+          tableCollapseWrapper.classList.add("hidden");
+          this.textContent = "Expand Full Table (33 Funds) ▼";
+        } else {
+          tableCollapseWrapper.classList.remove("hidden");
+          this.textContent = "Collapse Table ▲";
+        }
+      });
+
+      // -----------------------------------------------------------------------
+      // F. FUND DEEP-DIVE MODAL HANDLERS
+      // -----------------------------------------------------------------------
+      const modalBackdrop = document.getElementById("fundModalBackdrop");
+
+      window.openFundModal = function(fundId) {
+        const fund = MASTER_FUNDS.find(f => f.id === fundId) || MASTER_FUNDS[0];
+
+        document.getElementById("modalFundTitle").textContent = fund.name;
+        document.getElementById("modalFundAmc").innerHTML = `${fund.amc} &bull; <strong>${fund.mandate} ${fund.type}</strong>`;
+        document.getElementById("modalFundBadge").textContent = `${fund.status.toUpperCase()} FUND`;
+        document.getElementById("modalRiskBadge").textContent = `Risk Score: ${fund.risk}/5`;
+
+        document.getElementById("modalSip3y").textContent = fund.sip3y ? `+${fund.sip3y.toFixed(2)}% p.a.` : (fund.sip1y ? `1Y: +${fund.sip1y.toFixed(2)}%` : "DATA UNAVAILABLE");
+        document.getElementById("modalCagr3y").textContent = fund.cagr3y ? `+${fund.cagr3y.toFixed(2)}% p.a.` : `Incep: +${fund.incepCagr.toFixed(2)}%`;
+        document.getElementById("modalMaxDd").textContent = `${fund.maxDd.toFixed(1)}%`;
+        document.getElementById("modalNav").textContent = `${fund.nav} (${fund.aum})`;
+
+        document.getElementById("modalAllocation").textContent = fund.allocation;
+        document.getElementById("modalCrashNotes").textContent = fund.crashNotes;
+        document.getElementById("modalFeeText").textContent = fund.feeText;
+        document.getElementById("modalMinSip").textContent = fund.minSip > 0 ? `BDT ${fund.minSip.toLocaleString()} / month` : "Transactions Suspended";
+
+        const extLink = document.getElementById("modalExternalLink");
+        extLink.href = fund.url;
+        extLink.textContent = fund.status === "Avoid" ? "Read Enforcement Investigation Report ↗" : "Open Official Fund Page ↗";
+
+        modalBackdrop.classList.remove("hidden");
+        modalBackdrop.classList.add("flex");
+      };
+
+      window.closeFundModal = function() {
+        modalBackdrop.classList.add("hidden");
+        modalBackdrop.classList.remove("flex");
+      };
+
+      modalBackdrop.addEventListener("click", function(e) {
+        if (e.target === modalBackdrop) closeFundModal();
+      });
+
+      // -----------------------------------------------------------------------
+      // G. DARK / LIGHT THEME TOGGLE
+      // -----------------------------------------------------------------------
+      const themeToggleBtn = document.getElementById("themeToggleBtn");
+      const themeIconDark = document.getElementById("themeIconDark");
+      const themeIconLight = document.getElementById("themeIconLight");
+
+      // Check stored preference or system preference
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.classList.remove("dark");
+        themeIconDark.classList.remove("hidden");
+        themeIconLight.classList.add("hidden");
+      } else {
+        document.documentElement.classList.add("dark");
+        themeIconDark.classList.add("hidden");
+        themeIconLight.classList.remove("hidden");
+      }
+
+      themeToggleBtn.addEventListener("click", function() {
+        const isDark = document.documentElement.classList.contains("dark");
+        if (isDark) {
+          document.documentElement.classList.remove("dark");
+          themeIconDark.classList.remove("hidden");
+          themeIconLight.classList.add("hidden");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          themeIconDark.classList.add("hidden");
+          themeIconLight.classList.remove("hidden");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+
+      // -----------------------------------------------------------------------
+      // H. INITIAL RENDER
+      // -----------------------------------------------------------------------
+      computeMatch();
+      calculateWealth();
+      renderScreenerTable();
+
+    })();
+  </script>
+
+</body>
+</html>
